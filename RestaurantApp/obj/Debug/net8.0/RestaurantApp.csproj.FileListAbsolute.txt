@@ -12,3 +12,4 @@ C:\Users\Developer\source\repos\RestaurantApp\RestaurantApp\obj\Debug\net8.0\ref
 C:\Users\Developer\source\repos\RestaurantApp\RestaurantApp\obj\Debug\net8.0\RestaurantApp.pdb
 C:\Users\Developer\source\repos\RestaurantApp\RestaurantApp\obj\Debug\net8.0\RestaurantApp.genruntimeconfig.cache
 C:\Users\Developer\source\repos\RestaurantApp\RestaurantApp\obj\Debug\net8.0\ref\RestaurantApp.dll
+C:\Users\Developer\source\repos\RestaurantApp\RestaurantApp\obj\Debug\net8.0\RestaurantApp.sourcelink.json
