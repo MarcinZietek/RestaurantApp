@@ -1,11 +1,12 @@
 ﻿
+using RestaurantApp.Abstracts;
 using RestaurantApp.Classes;
 using System.Security.Cryptography.X509Certificates;
 using System.Text.Json;
 
 namespace RestaurantApp
 {
-   
+
     internal class Program
     {
         static void Main(string[] args)
@@ -18,9 +19,9 @@ namespace RestaurantApp
             Storehouse storehouse1 = new Storehouse(VegetableEnum.Cebula, FishEnum.Łosoś);
             Storehouse storehouse2 = new Storehouse(VegetableEnum.Ogórek, FishEnum.Szczupak);
 
-            Staff staff = new Staff(person, PositionEnum.Chef, 3700, DepartmentEnum.Kitchen, storehouse);     
-            Staff staff1 = new Staff(person1, PositionEnum.Sous_Chef, 3500, DepartmentEnum.Kitchen, storehouse2);
-            Staff staff2 = new Staff(person, PositionEnum.Cook, 3300, DepartmentEnum.Kitchen, storehouse1);
+            StaffBase staff = new StaffBase(person, PositionEnum.Chef, 3700, DepartmentEnum.Kitchen, storehouse);     
+            StaffBase staff1 = new StaffBase(person1, PositionEnum.Sous_Chef, 3500, DepartmentEnum.Kitchen, storehouse2);
+            StaffBase staff2 = new StaffBase(person, PositionEnum.Cook, 3300, DepartmentEnum.Kitchen, storehouse1);
 
             ListStaff(staff);
             ListStaff(staff1);
@@ -35,50 +36,28 @@ namespace RestaurantApp
             //foreach (Staff item in deserializedJson) {
             //    item.DisplayInfo();
             //}
-
-           
-
-            //foreach (Staff item in staffs)
-            //{
-            //    Console.WriteLine(item);
-
-            //}
-
-
-            
-
         }
-        public static List<Staff> ListStaff(Staff staff) 
+        public static List<StaffBase> ListStaff(StaffBase staff) 
         {
-            // staff = new Staff();
-            List<Staff> staffs = new List<Staff>();
+            List<StaffBase> staffs = new List<StaffBase>();
             staffs.Add(staff);
-            //try
-            //{
-            //    while (staff != null)
-            //    {
-            foreach (Staff item in staffs)
+            try
+            {
+                
+                foreach (StaffBase item in staffs)
                     {
                         
                         item.DisplayInfo();
                     }
 
-                    //staffs.Add(staff1);
-                    //staffs.Add(staff2);
+            //staffs.Add(staff1);
+            //staffs.Add(staff2);         
 
-                   
-                //}
-                //foreach (Staff item in staffs)
-                //{
-                //    item.DisplayInfo();
-
-                //}
-
-            //}
-            //catch (Exception e)
-            //{
-            //    Console.WriteLine(e);
-            //}
+        }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
             return staffs;
         }
     }

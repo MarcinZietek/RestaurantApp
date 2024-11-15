@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using RestaurantApp.Classes;
 
-namespace RestaurantApp.Classes
+namespace RestaurantApp.Abstracts
 {
-    public class Staff
+    public abstract class StaffBase
     {
         private Person person;
         private PositionEnum position;
@@ -14,8 +15,8 @@ namespace RestaurantApp.Classes
         private DepartmentEnum department;
         private Storehouse storehouse;
         public Guid StaffId { get; private set; }
-        public Staff() { }
-        public Staff(Person person, PositionEnum position, decimal salary, DepartmentEnum department, Storehouse storehouse)
+        public StaffBase() { }
+        public StaffBase(Person person, PositionEnum position, decimal salary, DepartmentEnum department, Storehouse storehouse)
         {
             StaffId = Guid.NewGuid();
             Person = person;
@@ -34,14 +35,16 @@ namespace RestaurantApp.Classes
             return $"ID: {StaffId}\nStanowisko: {Position}\nPensja: {Salary}\nDepartament: {Department}\nDane personalne {Person}";
         }
 
-        public void DisplayInfo()
+        public virtual void DisplayInfo()
         {
-           Console.WriteLine($"ID: {StaffId}\nStanowisko: {Position}\nDepartament: {Department}\nOdpowiedzialność: {Storehouse}");
+            Console.WriteLine($"ID: {StaffId}\nStanowisko: {Position}\nDepartament: {Department}\nOdpowiedzialność: {Storehouse}");
         }
+
+        public abstract decimal BonusSalary();
 
     }
 
-    public enum PositionEnum 
+    public enum PositionEnum
     {
         Chef, Sous_Chef, Pastry_Chef, Cook, Kitchen_Assistant, Kitchen_Porter, Dish_Washer, Manager, Junior_Manager, Waiter
     }
@@ -51,5 +54,5 @@ namespace RestaurantApp.Classes
         Kitchen, Office, Dining_Room, Reception
     }
 
-    
+
 }
