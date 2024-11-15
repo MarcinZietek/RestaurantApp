@@ -13,6 +13,7 @@ namespace RestaurantApp.Classes
         private VegetableEnum vegetable;
         private string liquids;
         private FishEnum fish;
+        private DairyEnum dairy;
 
         public Storehouse() { }
         public Storehouse(MeatEnum meat, VegetableEnum vegetable, string liquids, FishEnum fish)
@@ -47,16 +48,23 @@ namespace RestaurantApp.Classes
 
     }
 
-    public enum MeatEnum{
+    public enum MeatEnum
+    {
         Wołowina, Drób, Wieprzowina, Dziczyzna
     }
 
-    public enum FishEnum {
+    public enum FishEnum 
+    {
         Sandacz, Szczupak, Dorsz, Łosoś, Halibut
     }
 
     public enum VegetableEnum
     {
         Pomidor, Ogórek, Sałata, Cebula, Papryka
+    }
+
+    public enum DairyEnum
+    {
+        Jajko, Ser_żółty, Ser_Biały, Jogurt, Śmietana, Mkleko
     }
 }

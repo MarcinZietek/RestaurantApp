@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace RestaurantApp.Classes
 {
-    internal class Inventory
+    public class Chef : Cook
     {
+
     }
 }
