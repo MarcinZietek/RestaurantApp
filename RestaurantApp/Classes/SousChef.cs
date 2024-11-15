@@ -10,9 +10,9 @@ namespace RestaurantApp.Classes
     public class SousChef : StaffBase
     {
         public SousChef(Person person, PositionEnum position, decimal salary, DepartmentEnum department, Storehouse storehouse)
-           : base(person, position, salary, department, storehouse)
+           : base(person, salary, department, storehouse)
         {
-
+            Position = PositionEnum.Sous_Chef;
         }
         public override decimal BonusSalary()
         {

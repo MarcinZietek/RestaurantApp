@@ -1,6 +1,7 @@
 ﻿
 using RestaurantApp.Abstracts;
 using RestaurantApp.Classes;
+using System.Reflection;
 using System.Security.Cryptography.X509Certificates;
 using System.Text.Json;
 
@@ -9,23 +10,36 @@ namespace RestaurantApp
 
     internal class Program
     {
+
+
         static void Main(string[] args)
         {
-            Address address = new Address("Polska", "Mazowieckie", "Warszawa", "Piękna", "01-460");
-            Person person = new Person("Marcin", "Ziętek", DateTime.Parse("1983-01-25"), "M", address);
-            Address address1 = new Address("Polska", "Mazowieckie", "Warszawa", "Prosta", "01-466");
-            Person person1 = new Person("Agnieszka", "Urocza", DateTime.Parse("1985-10-05"), "F", address);
+
+            //ListStaff(staff);
+            List<StaffBase> staffs = new List<StaffBase>();
             Storehouse storehouse = new Storehouse(MeatEnum.Dziczyzna);
             Storehouse storehouse1 = new Storehouse(VegetableEnum.Cebula, FishEnum.Łosoś);
             Storehouse storehouse2 = new Storehouse(VegetableEnum.Ogórek, FishEnum.Szczupak);
+            staffs.Add(CreateStaff(
+                "Polska", "Mazowieckie", "Warszawa", "Piękna", "01-460",
+                "Marcin", "Ziętek", DateTime.Parse("1983-01-25"), "M",
+                PositionEnum.Chef, 3700, DepartmentEnum.Kitchen, storehouse));
+            staffs.Add(CreateStaff(
+                "Polska", "Mazowieckie", "Warszawa", "Prosta", "01-466",
+                "Agnieszka", "Urocza", DateTime.Parse("1985-10-05"), "F",
+                PositionEnum.Sous_Chef, 3500, DepartmentEnum.Kitchen, storehouse2));
+            staffs.Add(CreateStaff(
+                "Polska", "Mazowieckie", "Warszawa", "Dzika", "03-366",
+                "Marek", "Walczak", DateTime.Parse("1975-11-05"), "F",
+                PositionEnum.Pastry_Chef, 3500, DepartmentEnum.Kitchen, storehouse1));
 
-            StaffBase staff = new StaffBase(person, PositionEnum.Chef, 3700, DepartmentEnum.Kitchen, storehouse);     
-            StaffBase staff1 = new StaffBase(person1, PositionEnum.Sous_Chef, 3500, DepartmentEnum.Kitchen, storehouse2);
-            StaffBase staff2 = new StaffBase(person, PositionEnum.Cook, 3300, DepartmentEnum.Kitchen, storehouse1);
-
-            ListStaff(staff);
-            ListStaff(staff1);
-            ListStaff(staff2);
+            foreach (var staff in staffs)
+            {
+                if (staffs != null)
+                {
+                    staff.DisplayInfo();
+                }
+            }
 
 
             //staffs.RemoveAll(x => x == null);
@@ -37,28 +51,68 @@ namespace RestaurantApp
             //    item.DisplayInfo();
             //}
         }
-        public static List<StaffBase> ListStaff(StaffBase staff) 
+        // Metoda umożliwiająca dodanie obiektu do listy
+        public static List<StaffBase> ListStaff(StaffBase staff)
         {
             List<StaffBase> staffs = new List<StaffBase>();
-            staffs.Add(staff);
+           
+            //staffs.Add(staff);
             try
             {
-                
-                foreach (StaffBase item in staffs)
-                    {
-                        
-                        item.DisplayInfo();
-                    }
 
-            //staffs.Add(staff1);
-            //staffs.Add(staff2);         
+                foreach (var item in staffs)
+                {
 
-        }
+                    item.DisplayInfo();
+                }      
+
+            }
             catch (Exception e)
             {
                 Console.WriteLine(e);
             }
             return staffs;
         }
+        public static StaffBase CreateStaff(
+            string country, string state, string city, string street, string postalCode,
+            string firstName, string lastName, DateTime birthDate, string gender,
+            PositionEnum position, decimal salary, DepartmentEnum department, Storehouse storehouse)
+        {
+            try
+            {
+                // Tworzenie obiektu Address (kompozycja obiektu w obiekcie Staff)
+                Address address = new Address(country, state, city, street, postalCode);
+
+                // Tworzenie obiektu Person (składa się z adresu oraz danych osobowych)
+                Person person = new Person(firstName, lastName, birthDate, gender, address);
+
+                // Tworzenie obiektu Staff (kompozycja z obiektem Person)
+                StaffBase staff; 
+
+                switch (position)
+                {
+                    case PositionEnum.Chef :
+                        staff = new Chef(person, position, 3300, department, storehouse);
+                        break;
+                    case PositionEnum.Sous_Chef:
+                        staff = new SousChef(person, position, 3300, department, storehouse);
+                        break;
+                    case PositionEnum.Pastry_Chef:
+                        staff = new PastryChef(person, position, 3300, department, storehouse);
+                        break;
+                    default:
+                        throw new ArgumentException("Nie wybrano pozycji na jakiej jest zatrudniony pracownik");
+                        break;
+                }
+                return staff; // Zwracanie poprawnie utworzonego pracownika
+            }
+            catch (ArgumentException ex)
+            {
+                // Obsługa wyjątków, gdy wprowadzono niepoprawne dane, np. PESEL, wynagrodzenie itp.
+                Console.WriteLine($"Błąd przy tworzeniu pracownika {firstName} {lastName}: {ex.Message}");
+                return null; // Zwracamy null, jeśli nastąpił błąd
+            }
+        }
+
     }
 }

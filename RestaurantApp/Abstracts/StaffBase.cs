@@ -16,7 +16,7 @@ namespace RestaurantApp.Abstracts
         private Storehouse storehouse;
         public Guid StaffId { get; private set; }
         public StaffBase() { }
-        public StaffBase(Person person, PositionEnum position, decimal salary, DepartmentEnum department, Storehouse storehouse)
+        public StaffBase(Person person, decimal salary, DepartmentEnum department, Storehouse storehouse, PositionEnum position = PositionEnum.General)
         {
             StaffId = Guid.NewGuid();
             Person = person;
@@ -30,6 +30,10 @@ namespace RestaurantApp.Abstracts
         public decimal Salary { get { return salary; } set { salary = value; } }
         public DepartmentEnum Department { get { return department; } set { department = value; } }
         public Storehouse Storehouse { get { return storehouse; } set { storehouse = value; } }
+        public string FullName
+        {
+            get { return $"{Person.FirstName} {Person.LastName}"; } // Zwraca imię i nazwisko osoby
+        }
         public override string ToString()
         {
             return $"ID: {StaffId}\nStanowisko: {Position}\nPensja: {Salary}\nDepartament: {Department}\nDane personalne {Person}";
@@ -46,7 +50,7 @@ namespace RestaurantApp.Abstracts
 
     public enum PositionEnum
     {
-        Chef, Sous_Chef, Pastry_Chef, Cook, Kitchen_Assistant, Kitchen_Porter, Dish_Washer, Manager, Junior_Manager, Waiter
+        Chef, Sous_Chef, Pastry_Chef, Cook, Kitchen_Assistant, Kitchen_Porter, Dish_Washer, Manager, Junior_Manager, Waiter, General
     }
 
     public enum DepartmentEnum

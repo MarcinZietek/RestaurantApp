@@ -10,9 +10,9 @@ namespace RestaurantApp.Classes
     public class Chef : StaffBase
     {
         public Chef(Person person, PositionEnum position, decimal salary, DepartmentEnum department, Storehouse storehouse)
-        : base(person, position, salary, department, storehouse)
+        : base(person, salary, department, storehouse)
         {
-           
+           Position = PositionEnum.Chef;
         }
         public override decimal BonusSalary()
         {
