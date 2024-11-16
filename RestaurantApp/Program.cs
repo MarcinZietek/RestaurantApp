@@ -10,8 +10,6 @@ namespace RestaurantApp
 
     internal class Program
     {
-
-
         static void Main(string[] args)
         {
 
@@ -23,21 +21,34 @@ namespace RestaurantApp
             staffs.Add(CreateStaff(
                 "Polska", "Mazowieckie", "Warszawa", "Piękna", "01-460",
                 "Marcin", "Ziętek", DateTime.Parse("1983-01-25"), "M",
-                PositionEnum.Chef, 3700, DepartmentEnum.Kitchen, storehouse));
+                PositionEnum.Chef, 3700, DepartmentEnum.Kitchen, storehouse, 120));
             staffs.Add(CreateStaff(
                 "Polska", "Mazowieckie", "Warszawa", "Prosta", "01-466",
                 "Agnieszka", "Urocza", DateTime.Parse("1985-10-05"), "F",
-                PositionEnum.Sous_Chef, 3500, DepartmentEnum.Kitchen, storehouse2));
+                PositionEnum.Sous_Chef, 3500, DepartmentEnum.Kitchen, storehouse2, 145));
             staffs.Add(CreateStaff(
                 "Polska", "Mazowieckie", "Warszawa", "Dzika", "03-366",
                 "Marek", "Walczak", DateTime.Parse("1975-11-05"), "F",
-                PositionEnum.Pastry_Chef, 3500, DepartmentEnum.Kitchen, storehouse1));
+                PositionEnum.Pastry_Chef, 3500, DepartmentEnum.Kitchen, storehouse1, 195));
 
             foreach (var staff in staffs)
             {
                 if (staffs != null)
                 {
                     staff.DisplayInfo();
+                    if (staff is Chef chef)
+                    {
+                        chef.CheckMenu();
+                        chef.TakenHours(150);
+                    }
+                    else if (staff is PastryChef pastry) 
+                    {
+                        pastry.PrepareDesert();
+                    } 
+                    else if (staff is SousChef sous)
+                    {
+                        sous.PrepareMainDish();
+                    }
                 }
             }
 
@@ -76,7 +87,7 @@ namespace RestaurantApp
         public static StaffBase CreateStaff(
             string country, string state, string city, string street, string postalCode,
             string firstName, string lastName, DateTime birthDate, string gender,
-            PositionEnum position, decimal salary, DepartmentEnum department, Storehouse storehouse)
+            PositionEnum position, decimal salary, DepartmentEnum department, Storehouse storehouse, double hours)
         {
             try
             {
@@ -92,13 +103,13 @@ namespace RestaurantApp
                 switch (position)
                 {
                     case PositionEnum.Chef :
-                        staff = new Chef(person, position, 3300, department, storehouse);
+                        staff = new Chef(person, position, 3300, department, storehouse, hours);
                         break;
                     case PositionEnum.Sous_Chef:
-                        staff = new SousChef(person, position, 3300, department, storehouse);
+                        staff = new SousChef(person, position, 3300, department, storehouse, hours);
                         break;
                     case PositionEnum.Pastry_Chef:
-                        staff = new PastryChef(person, position, 3300, department, storehouse);
+                        staff = new PastryChef(person, position, 3300, department, storehouse, hours);
                         break;
                     default:
                         throw new ArgumentException("Nie wybrano pozycji na jakiej jest zatrudniony pracownik");
