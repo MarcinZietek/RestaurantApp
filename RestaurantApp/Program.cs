@@ -12,8 +12,6 @@ namespace RestaurantApp
     {
         static void Main(string[] args)
         {
-
-            //ListStaff(staff);
             List<StaffBase> staffs = new List<StaffBase>();
             Storehouse storehouse = new Storehouse(MeatEnum.Dziczyzna);
             Storehouse storehouse1 = new Storehouse(VegetableEnum.Cebula, FishEnum.Łosoś);
@@ -31,59 +29,54 @@ namespace RestaurantApp
                 "Marek", "Walczak", DateTime.Parse("1975-11-05"), "F",
                 PositionEnum.Pastry_Chef, 3500, DepartmentEnum.Kitchen, storehouse1, 195));
 
-            foreach (var staff in staffs)
+            bool quit = false;
+
+            //Wyświetlanie menu z możliwością ciągłego wyboru opcji. Użytkownik sam decyduje o zakończeniu programu
+            Options();
+            while (!quit)
             {
-                if (staffs != null)
+                try
                 {
-                    staff.DisplayInfo();
-                    if (staff is Chef chef)
+                    Console.WriteLine("Wybierz opcję.");
+                    int choice = int.Parse(Console.ReadLine());
+                    string message = null;
+                    switch (choice)
                     {
-                        chef.CheckMenu();
-                        chef.TakenHours(150);
-                    }
-                    else if (staff is PastryChef pastry) 
-                    {
-                        pastry.PrepareDesert();
-                    } 
-                    else if (staff is SousChef sous)
-                    {
-                        sous.PrepareMainDish();
-                    }
+                        case 1: message = "Pokazuje wszystkich pracowników"; break;
+                        case 2: message = "Dodawanie pacowników"; break;
+                        case 3: message = "Modyfikacja pracownika"; break;
+                        case 4: message = "Usuwa pracownika"; break;
+                        case 5: message = "Wyświetla wybranego pracownika"; break;
+                        case 6: Options(); break;
+                        case 7: message = "Koniec programu"; quit = true; break;
+                        case 8: message = "Czyszczenie konsoli"; Console.Clear(); Options(); break;
+                        case 9: message = "Zapisywanie danych do pliku - format JSON"; break;
+                        default: message = "Brak wyboru"; break;
+                    }                    
+                    Console.WriteLine(message);                   
+                }
+                catch (FormatException fe)
+                {
+                    // Obsługa wyjątków, gdy nie wprowadzono wskazanego numeru w menu
+                    Console.WriteLine($"Błąd rzutowania stringu na integer: {fe.Message}");
                 }
             }
-
-
-            //staffs.RemoveAll(x => x == null);
-            //string jsonString = JsonSerializer.Serialize(staffs);
-            //File.WriteAllText("Staff.json", jsonString);
-            //var jsonfile = File.ReadAllText("Staff.json");
-            //var deserializedJson = JsonSerializer.Deserialize<List<Staff>>(jsonfile);
-            //foreach (Staff item in deserializedJson) {
-            //    item.DisplayInfo();
-            //}
-        }
-        // Metoda umożliwiająca dodanie obiektu do listy
-        public static List<StaffBase> ListStaff(StaffBase staff)
-        {
-            List<StaffBase> staffs = new List<StaffBase>();
-           
-            //staffs.Add(staff);
-            try
+            //Wyświetlanie opcji 
+            void Options()
             {
-
-                foreach (var item in staffs)
-                {
-
-                    item.DisplayInfo();
-                }      
-
+                Console.WriteLine("\n\t1 - Pokaż wszystkich pracowników");
+                Console.WriteLine("\n\t2 - Dodaj pracownika");
+                Console.WriteLine("\n\t3 - Zmodyfikuj pracownika");
+                Console.WriteLine("\n\t4 - Usuń pracownika");
+                Console.WriteLine("\n\t5 - Wyświetl wybranego pracownika");
+                Console.WriteLine("\n\t6 - Wybor opcji");
+                Console.WriteLine("\n\t7 - Zakoncz");
+                Console.WriteLine("\n\t8 - Wyczyść konsolę");
+                Console.WriteLine("\n\t9 - Zapisz do pliku - JSON\n");
             }
-            catch (Exception e)
-            {
-                Console.WriteLine(e);
-            }
-            return staffs;
+
         }
+            
         public static StaffBase CreateStaff(
             string country, string state, string city, string street, string postalCode,
             string firstName, string lastName, DateTime birthDate, string gender,
@@ -124,6 +117,42 @@ namespace RestaurantApp
                 return null; // Zwracamy null, jeśli nastąpił błąd
             }
         }
-
+        //foreach (var staff in staffs)
+        //{
+        //    if (staffs != null)
+        //    {
+        //        staff.DisplayInfo();
+        //        if (staff is Chef chef)
+        //        {
+        //            chef.CheckMenu();
+        //            chef.TakenHours(150);
+        //        }
+        //        else if (staff is PastryChef pastry) 
+        //        {
+        //            pastry.PrepareDesert();
+        //        } 
+        //        else if (staff is SousChef sous)
+        //        {
+        //            sous.PrepareMainDish();
+        //        }
+        //    }
     }
+
+
+
+
+    //staffs.RemoveAll(x => x == null);
+    //string jsonString = JsonSerializer.Serialize(staffs);
+    //File.WriteAllText("Staff.json", jsonString);
+    //var jsonfile = File.ReadAllText("Staff.json");
+    //var deserializedJson = JsonSerializer.Deserialize<List<Staff>>(jsonfile);
+    //foreach (Staff item in deserializedJson) {
+    //    item.DisplayInfo();
+    //}
+    //}
+
+  
+
 }
+
+

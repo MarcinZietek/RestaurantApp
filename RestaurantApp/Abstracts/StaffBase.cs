@@ -50,7 +50,7 @@ namespace RestaurantApp.Abstracts
         
 
         public abstract decimal BonusSalary();
-        public abstract double TakenHours(double hours); //Metoda obliczająca ilość brakujących godzin pracy w miesiącu
+        public abstract double TakenHours(double hours); //Metoda obliczająca bilans godzin pracy w miesiącu
 
     }
 
