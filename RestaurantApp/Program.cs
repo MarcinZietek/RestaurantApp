@@ -32,7 +32,9 @@ namespace RestaurantApp
             bool quit = false;
 
             //Wyświetlanie menu z możliwością ciągłego wyboru opcji. Użytkownik sam decyduje o zakończeniu programu
-            Options();
+            Options();         
+             
+
             while (!quit)
             {
                 try
@@ -42,7 +44,10 @@ namespace RestaurantApp
                     string message = null;
                     switch (choice)
                     {
-                        case 1: message = "Pokazuje wszystkich pracowników"; break;
+                        case 1: message = "Pokazuje wszystkich pracowników"; 
+
+                         
+                            break;
                         case 2: message = "Dodawanie pacowników"; break;
                         case 3: message = "Modyfikacja pracownika"; break;
                         case 4: message = "Usuwa pracownika"; break;
@@ -52,8 +57,8 @@ namespace RestaurantApp
                         case 8: message = "Czyszczenie konsoli"; Console.Clear(); Options(); break;
                         case 9: message = "Zapisywanie danych do pliku - format JSON"; break;
                         default: message = "Brak wyboru"; break;
-                    }                    
-                    Console.WriteLine(message);                   
+                    }
+                    Console.WriteLine(message);
                 }
                 catch (FormatException fe)
                 {
@@ -75,8 +80,24 @@ namespace RestaurantApp
                 Console.WriteLine("\n\t9 - Zapisz do pliku - JSON\n");
             }
 
-        }
+            //ManageCRUD<Person> manageCRUD = new ManageCRUD<Person>();
+            //manageCRUD.Create(new Person { FirstName = "test1" });
+            //manageCRUD.Create(new Person { FirstName = "test2" });
+            //manageCRUD.Create(new Person { FirstName = "test3" });
+            //manageCRUD.Create(new Person { FirstName = "test4" });
             
+            
+            //ManageCRUD<PastryChef> pastryCheef = new ManageCRUD<PastryChef>();
+            //manageCRUD.Create(new Person { FirstName = "test1" });
+            //manageCRUD.Create(new Person { FirstName = "test2" });
+            //manageCRUD.Create(new Person { FirstName = "test3" });
+            //manageCRUD.Create(new Person { FirstName = "test4" });
+
+            //var lista2 = .GetAll();
+
+        }
+
+
         public static StaffBase CreateStaff(
             string country, string state, string city, string street, string postalCode,
             string firstName, string lastName, DateTime birthDate, string gender,
@@ -117,6 +138,9 @@ namespace RestaurantApp
                 return null; // Zwracamy null, jeśli nastąpił błąd
             }
         }
+
+        
+        
         //foreach (var staff in staffs)
         //{
         //    if (staffs != null)

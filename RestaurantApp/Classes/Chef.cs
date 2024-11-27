@@ -5,11 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 using RestaurantApp.Abstracts;
 using RestaurantApp.Helper;
+using RestaurantApp.Interfaces;
 
 namespace RestaurantApp.Classes
 {
-    public class Chef : StaffBase
+    public class Chef : StaffBase, IListObject<Chef>
     {
+        private readonly List<Chef> list = new List<Chef>();
         public Chef(Person person, PositionEnum position, decimal salary, DepartmentEnum department, Storehouse storehouse, double hours)
         : base(person, salary, department, storehouse, hours)
         {
@@ -36,5 +38,9 @@ namespace RestaurantApp.Classes
             Console.WriteLine($"Szef {Person} sprawdza menu... ");
         }
 
+        List<Chef> IListObject<Chef>.GetAll()
+        {
+            return list;
+        }
     }
 }

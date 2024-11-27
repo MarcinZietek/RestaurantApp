@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RestaurantApp.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,8 +7,10 @@ using System.Threading.Tasks;
 
 namespace RestaurantApp.Classes
 {
-    public class Address
+    public class Address : IListObject<Address>
     {
+        private readonly List<Address> list = new List<Address>();
+
         private string country;
         private string state;
         private string city;
@@ -29,6 +32,12 @@ namespace RestaurantApp.Classes
         public string PostalCode { get { return postalCode; } set { postalCode = value; } }
         public string Country { get { return country; } set { country = value; } }
         public string Street { get { return street; } set { street = value; } }
+
+        public List<Address> GetAll()
+        {
+            return list;
+        }
+
         public override string ToString() { return $"Kraj: {Country}\nWojewództwo: {State}\nMiasto: {City}\nUlica: {Street}\nKod pocztowy: {PostalCode}"; }
     }
 }

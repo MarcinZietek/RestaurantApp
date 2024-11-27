@@ -5,10 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 using RestaurantApp.Abstracts;
 using RestaurantApp.Helper;
+using RestaurantApp.Interfaces;
 
 namespace RestaurantApp.Classes
 {
-    public class PastryChef : StaffBase { 
+    public class PastryChef : StaffBase, IListObject<PastryChef>  
+    {
+        private readonly List<PastryChef> list = new List<PastryChef>();
         public PastryChef(Person person, PositionEnum position, decimal salary, DepartmentEnum department, Storehouse storehouse, double hours) 
             :base (person, salary, department, storehouse, hours)
         {
@@ -35,6 +38,9 @@ namespace RestaurantApp.Classes
             Console.WriteLine($"Brakujące godziny w miesiącu: {TakenHours(Hours)}");
         }
 
-
+        public List<PastryChef> GetAll()
+        {
+            return list;
+        }
     }
 }

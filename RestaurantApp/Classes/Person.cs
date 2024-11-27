@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RestaurantApp.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,13 +7,16 @@ using System.Threading.Tasks;
 
 namespace RestaurantApp.Classes
 {
-    public class Person
+    public class Person : IListObject<Person>
     {
+        private readonly List<Person> list = new List<Person>();
+
         private string firstName;
         private string lastName;
         private DateTime birthDate;
         private string gender;
-        private Address address; 
+        private Address address;
+
         public Person() { }
         public Person(string firstName, string lastName, DateTime birthDate, string gender, Address address) {
             FirstName = firstName;
@@ -48,6 +52,11 @@ namespace RestaurantApp.Classes
         public override string ToString()
         {
             return $"Imie: {FirstName}\nNazwisko: {LastName}\nWiek: {Age}\nPłeć: {Gender}\nAdres: {address}";
+        }
+
+        public List<Person> GetAll()
+        {
+            return list;
         }
 
     }

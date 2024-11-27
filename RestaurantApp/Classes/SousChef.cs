@@ -5,11 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 using RestaurantApp.Abstracts;
 using RestaurantApp.Helper;
+using RestaurantApp.Interfaces;
 
 namespace RestaurantApp.Classes
 {
-    public class SousChef : StaffBase
+    public class SousChef : StaffBase, IListObject<SousChef>
     {
+        private readonly List<SousChef> list = new List<SousChef>();
         public SousChef(Person person, PositionEnum position, decimal salary, DepartmentEnum department, Storehouse storehouse, double hours)
            : base(person, salary, department, storehouse, hours)
         {
@@ -34,6 +36,11 @@ namespace RestaurantApp.Classes
             Console.WriteLine($"Bonus pracownika: {BonusSalary():C}");
             Console.WriteLine($"Podatek do zapłacenia: {GeneralHelper.CalculateTax(Salary)} ");
             Console.WriteLine($"Brakujące godziny w miesiącu: {TakenHours(Hours)}");
+        }
+
+        public List<SousChef> GetAll()
+        {
+            return list;
         }
     }
 }
