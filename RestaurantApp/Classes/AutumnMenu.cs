@@ -1,12 +1,15 @@
-﻿using System;
+﻿using RestaurantApp.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace RestaurantApp.Classes
 {
-    public class Menu
+    public class AutumnMenu : IMenu
     {
         private string non_alcoholic_beverage;
         private string alcoholic_beverage;
@@ -17,14 +20,14 @@ namespace RestaurantApp.Classes
         private string pastry;
         private double cost;
 
-        public Menu() { }
-        public Menu(string starter, string soup, string main)
+        public AutumnMenu() { }
+        public AutumnMenu(string starter, string soup, string main)
         {
             Starter = starter;
             Soup = soup;
             Main = main;
         }
-        public Menu(string starter, string soup, string main, string pastry, string non_alcoholic_beverage)
+        public AutumnMenu(string starter, string soup, string main, string pastry, string non_alcoholic_beverage)
         {
             Starter = starter;
             Soup = soup;
@@ -32,7 +35,7 @@ namespace RestaurantApp.Classes
             Pastry = pastry;
             Non_alcoholic_beverage = non_alcoholic_beverage;
         }
-        public Menu(string non_alcoholic_beverage, string alcoholic_beverage, string starter, string soup, string salad, string main, string pastry, double cost)
+        public AutumnMenu(string non_alcoholic_beverage, string alcoholic_beverage, string starter, string soup, string salad, string main, string pastry, double cost)
         {
             Non_alcoholic_beverage = non_alcoholic_beverage;
             Alcoholic_beverage = alcoholic_beverage;
@@ -52,9 +55,9 @@ namespace RestaurantApp.Classes
         public string Pastry { get { return pastry; } set { pastry = value; } }
         public double Cost { get { return cost; } set { cost = value; } }
 
-        public Menu HappyMeal(string Starter, string Soup, string Main)
+        public AutumnMenu HappyMeal(string Starter, string Soup, string Main)
         {
-            Menu menu = new Menu(Starter, Soup, Main);
+            AutumnMenu menu = new AutumnMenu(Starter, Soup, Main);
             if (string.IsNullOrEmpty(Starter) || string.IsNullOrEmpty(Soup) || string.IsNullOrEmpty(Main))
             {
                 throw new ArgumentNullException("Nie można utworzyć zestawu, brak któregoś ze dań.");
@@ -63,15 +66,32 @@ namespace RestaurantApp.Classes
             }
         }
 
-        public Menu GrandeMenu(string Starter, string Soup, string Main, string Pastry, string Non_alcoholic_beverage)
+        public AutumnMenu GrandeMenu(string Starter, string Soup, string Main, string Pastry, string Non_alcoholic_beverage)
         {
-            Menu menu = new Menu(Starter, Soup, Main, Pastry, Non_alcoholic_beverage);
+            AutumnMenu menu = new AutumnMenu(Starter, Soup, Main, Pastry, Non_alcoholic_beverage);
             if (string.IsNullOrEmpty(Starter) || string.IsNullOrEmpty(Soup) || string.IsNullOrEmpty(Main) || string.IsNullOrEmpty(Pastry) || string.IsNullOrEmpty(Non_alcoholic_beverage))
             {
                 throw new ArgumentNullException("Nie można utworzyć zestawu, brak któregoś ze dań.");
             } else {
                 return menu;
             }
+        }
+
+        public override string ToString()
+        {
+            if (Starter != null && Soup != null && Main != null && Pastry != null && Non_alcoholic_beverage != null)
+            {
+                return $"Duży zestaw jesienny: \nStarter: {Starter}\nZupa: {Soup}\nDanie główne: {Main}\nDeser: {Pastry}\nNapój: {Non_alcoholic_beverage}";
+            }
+            else if (Starter != null && Soup != null && Main != null && Pastry == null && Non_alcoholic_beverage == null)
+            {
+                return $"HappyMeal jesienny: \nStarter: {Starter}\nZupa: {Soup}\ndanie główne: {Main}";
+            }
+            else return $"Menu w trakcie komponowania";
+        }
+        public void Menu()
+        {
+            Console.WriteLine($"{ToString()}");
         }
     }
 }

@@ -1,6 +1,8 @@
 ﻿
 using RestaurantApp.Abstracts;
 using RestaurantApp.Classes;
+using RestaurantApp.Enums;
+using System;
 using System.Reflection;
 using System.Security.Cryptography.X509Certificates;
 using System.Text.Json;
@@ -12,6 +14,15 @@ namespace RestaurantApp
     {
         static void Main(string[] args)
         {
+            AutumnMenu grandeMeal = new AutumnMenu();
+            AutumnMenu happyMeal = new AutumnMenu();
+            SpringMenu grandeMeal1 = new SpringMenu();
+            SpringMenu happyMeal1 = new SpringMenu();
+            grandeMeal = grandeMeal.GrandeMenu("Grzanki z pasta z suszonych pomidorów oraz serem", "Krem z dyni", "Gęsina Św. Marcina", "Tiramisu truflowe", "Kompot jerzynowy");
+            grandeMeal1 = grandeMeal1.GrandeMenu("Sałatka z nowalijek", "Krem z młodych ziemniaków i chrzanu", "Młoda perliczka", "Sernik cytrynowy", "Mus z jarmużu");
+            happyMeal = happyMeal.HappyMeal("Chrupiące bataty", "Kren z pora", "Placek po zbójnicku");
+            happyMeal1 = happyMeal1.HappyMeal("Seler naciowy z sosem serowym", "Pikantny krem z pomidorów" ,"Skrzydełka buffalo");
+
             List<StaffBase> staffs = new List<StaffBase>();
             Storehouse storehouse = new Storehouse(MeatEnum.Dziczyzna);
             Storehouse storehouse1 = new Storehouse(VegetableEnum.Cebula, FishEnum.Łosoś);
@@ -29,6 +40,8 @@ namespace RestaurantApp
                 "Marek", "Walczak", DateTime.Parse("1975-11-05"), "F",
                 PositionEnum.Pastry_Chef, 3500, DepartmentEnum.Kitchen, storehouse1, 195));
 
+                        
+
             bool quit = false;
 
             //Wyświetlanie menu z możliwością ciągłego wyboru opcji. Użytkownik sam decyduje o zakończeniu programu
@@ -44,10 +57,7 @@ namespace RestaurantApp
                     string message = null;
                     switch (choice)
                     {
-                        case 1: message = "Pokazuje wszystkich pracowników"; 
-
-                         
-                            break;
+                        case 1: message = "Pokazuje wszystkie menu"; grandeMeal.Menu(); grandeMeal1.Menu(); happyMeal.Menu(); happyMeal1.Menu(); break;
                         case 2: message = "Dodawanie pacowników"; break;
                         case 3: message = "Modyfikacja pracownika"; break;
                         case 4: message = "Usuwa pracownika"; break;
@@ -56,6 +66,7 @@ namespace RestaurantApp
                         case 7: message = "Koniec programu"; quit = true; break;
                         case 8: message = "Czyszczenie konsoli"; Console.Clear(); Options(); break;
                         case 9: message = "Zapisywanie danych do pliku - format JSON"; break;
+                        case 10: message = "Wyświetla wszystkie stanowiska: "; foreach(var staff in staffs) { staff.DisplayInfo(); }; break;
                         default: message = "Brak wyboru"; break;
                     }
                     Console.WriteLine(message);
@@ -77,7 +88,9 @@ namespace RestaurantApp
                 Console.WriteLine("\n\t6 - Wybor opcji");
                 Console.WriteLine("\n\t7 - Zakoncz");
                 Console.WriteLine("\n\t8 - Wyczyść konsolę");
-                Console.WriteLine("\n\t9 - Zapisz do pliku - JSON\n");
+                Console.WriteLine("\n\t9 - Zapisz do pliku - JSON");
+                Console.WriteLine("\n\t10 - Wyświetl wszystkie stanowiska\n");
+
             }
 
             //ManageCRUD<Person> manageCRUD = new ManageCRUD<Person>();
@@ -111,19 +124,21 @@ namespace RestaurantApp
                 // Tworzenie obiektu Person (składa się z adresu oraz danych osobowych)
                 Person person = new Person(firstName, lastName, birthDate, gender, address);
 
+                
+
                 // Tworzenie obiektu Staff (kompozycja z obiektem Person)
                 StaffBase staff; 
 
                 switch (position)
                 {
                     case PositionEnum.Chef :
-                        staff = new Chef(person, position, 3300, department, storehouse, hours);
+                        staff = new Chef(person, position, 4000, department, storehouse, hours);
                         break;
                     case PositionEnum.Sous_Chef:
-                        staff = new SousChef(person, position, 3300, department, storehouse, hours);
+                        staff = new SousChef(person, position, 3600, department, storehouse, hours);
                         break;
                     case PositionEnum.Pastry_Chef:
-                        staff = new PastryChef(person, position, 3300, department, storehouse, hours);
+                        staff = new PastryChef(person, position, 3600, department, storehouse, hours);
                         break;
                     default:
                         throw new ArgumentException("Nie wybrano pozycji na jakiej jest zatrudniony pracownik");

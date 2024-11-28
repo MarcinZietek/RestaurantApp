@@ -4,11 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using RestaurantApp.Classes;
+using RestaurantApp.Enums;
+using RestaurantApp.Interfaces;
 
 namespace RestaurantApp.Abstracts
 {
-    public abstract class StaffBase
+    public abstract class StaffBase 
     {
+        
+
         private Person person;
         private PositionEnum position;
         private decimal salary;
@@ -52,17 +56,8 @@ namespace RestaurantApp.Abstracts
         public abstract decimal BonusSalary();
         public abstract double TakenHours(double hours); //Metoda obliczająca bilans godzin pracy w miesiącu
 
-    }
-
-    public enum PositionEnum
-    {
-        Chef, Sous_Chef, Pastry_Chef, Cook, Kitchen_Assistant, Kitchen_Porter, Dish_Washer, Manager, Junior_Manager, Waiter, General
-    }
-
-    public enum DepartmentEnum
-    {
-        Kitchen, Office, Dining_Room, Reception
-    }
+       
+    }   
 
 
 }

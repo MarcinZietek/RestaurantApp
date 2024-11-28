@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace RestaurantApp.Classes
 {
-    public class Person : IListObject<Person>
+    public class Person 
     {
-        private readonly List<Person> list = new List<Person>();
+       
 
         private string firstName;
         private string lastName;
@@ -52,11 +52,6 @@ namespace RestaurantApp.Classes
         public override string ToString()
         {
             return $"Imie: {FirstName}\nNazwisko: {LastName}\nWiek: {Age}\nPłeć: {Gender}\nAdres: {address}";
-        }
-
-        public List<Person> GetAll()
-        {
-            return list;
         }
 
     }

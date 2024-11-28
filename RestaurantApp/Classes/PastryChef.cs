@@ -4,14 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using RestaurantApp.Abstracts;
+using RestaurantApp.Enums;
 using RestaurantApp.Helper;
 using RestaurantApp.Interfaces;
 
 namespace RestaurantApp.Classes
 {
-    public class PastryChef : StaffBase, IListObject<PastryChef>  
+    public class PastryChef : StaffBase
     {
-        private readonly List<PastryChef> list = new List<PastryChef>();
+       
         public PastryChef(Person person, PositionEnum position, decimal salary, DepartmentEnum department, Storehouse storehouse, double hours) 
             :base (person, salary, department, storehouse, hours)
         {
@@ -33,14 +34,11 @@ namespace RestaurantApp.Classes
         public override void DisplayInfo()
         {
             base.DisplayInfo();
-            Console.WriteLine($"Bonus pracownika: {BonusSalary():C}");
-            Console.WriteLine($"Podatek do zapłacenia: {GeneralHelper.CalculateTax(Salary)} ");
+            //Console.WriteLine($"Bonus pracownika: {BonusSalary():C}");
+            //Console.WriteLine($"Podatek do zapłacenia: {GeneralHelper.CalculateTax(Salary)} ");
             Console.WriteLine($"Brakujące godziny w miesiącu: {TakenHours(Hours)}");
         }
 
-        public List<PastryChef> GetAll()
-        {
-            return list;
-        }
+        
     }
 }
