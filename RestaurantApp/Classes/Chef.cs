@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.PortableExecutable;
 using System.Text;
 using System.Threading.Tasks;
 using RestaurantApp.Abstracts;
@@ -12,18 +13,18 @@ namespace RestaurantApp.Classes
 {
     public class Chef : StaffBase
     {
-       
+        public Chef() { }
         public Chef(Person person, PositionEnum position, decimal salary, DepartmentEnum department, Storehouse storehouse, double hours)
         : base(person, salary, department, storehouse, hours)
         {
-           Position = PositionEnum.Chef;
+            Position = PositionEnum.Chef;
         }
         public override decimal BonusSalary()
         {
             return Salary * 0.2M;
         }
-      
-        public override double TakenHours(double Hours) 
+
+        public override double TakenHours(double Hours)
         {
             return Hours - 160;
         }
@@ -36,8 +37,12 @@ namespace RestaurantApp.Classes
         }
         public void CheckMenu()
         {
-            Console.WriteLine($"Szef {Person} sprawdza menu... ");
+            Console.WriteLine($"Szef {Person.LastName} {Person.FirstName} sprawdza menu... \n");
         }
 
-        
+        public override string FullName()
+        {
+            { return $"{Person.FirstName} {Person.LastName}\n"; }
+        }
+    }   
 }

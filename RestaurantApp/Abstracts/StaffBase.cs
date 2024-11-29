@@ -36,11 +36,9 @@ namespace RestaurantApp.Abstracts
         public decimal Salary { get { return salary; } set { salary = value; } }
         public DepartmentEnum Department { get { return department; } set { department = value; } }
         public Storehouse Storehouse { get { return storehouse; } set { storehouse = value; } }
-        public double Hours { get { return hours; } set { hours = value; } } 
-        public string FullName
-        {
-            get { return $"{Person.FirstName} {Person.LastName}"; } // Zwraca imię i nazwisko osoby
-        }
+        public double Hours { get { return hours; } set { hours = value; } }
+        public abstract string FullName();
+        
         //public override string ToString()
         //{
         //    return $"ID: {StaffId}\nStanowisko: {Position}\nPensja: {Salary}\nDepartament: {Department}\nDane personalne {Person}";
@@ -48,7 +46,7 @@ namespace RestaurantApp.Abstracts
 
         public virtual void DisplayInfo()
         {
-            Console.WriteLine($"ID: {StaffId}\nStanowisko: {Position}\nDepartament: {Department}\nOdpowiedzialność: {Storehouse}");
+            Console.WriteLine($"ID: {StaffId}\tStanowisko: {Position}\tDepartament: {Department}\tOdpowiedzialność: {Storehouse}\n");
         }
 
         

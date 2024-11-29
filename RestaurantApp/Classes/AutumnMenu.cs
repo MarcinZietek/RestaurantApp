@@ -81,11 +81,11 @@ namespace RestaurantApp.Classes
         {
             if (Starter != null && Soup != null && Main != null && Pastry != null && Non_alcoholic_beverage != null)
             {
-                return $"Duży zestaw jesienny: \nStarter: {Starter}\nZupa: {Soup}\nDanie główne: {Main}\nDeser: {Pastry}\nNapój: {Non_alcoholic_beverage}";
+                return $"Duży zestaw jesienny: \nStarter: {Starter}\nZupa: {Soup}\nDanie główne: {Main}\nDeser: {Pastry}\nNapój: {Non_alcoholic_beverage}\n";
             }
             else if (Starter != null && Soup != null && Main != null && Pastry == null && Non_alcoholic_beverage == null)
             {
-                return $"HappyMeal jesienny: \nStarter: {Starter}\nZupa: {Soup}\ndanie główne: {Main}";
+                return $"HappyMeal jesienny: \nStarter: {Starter}\nZupa: {Soup}\ndanie główne: {Main}\n";
             }
             else return $"Menu w trakcie komponowania";
         }

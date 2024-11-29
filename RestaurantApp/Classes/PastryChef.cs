@@ -29,7 +29,7 @@ namespace RestaurantApp.Classes
         }
         public void PrepareDesert()
         {
-            Console.WriteLine($"Mistrz cukiernictwa {Person} przygotowuje deser dnia. ");
+            Console.WriteLine($"Mistrz cukiernictwa {Person.LastName} {Person.FirstName} przygotowuje deser dnia. \n");
         }
         public override void DisplayInfo()
         {
@@ -39,6 +39,9 @@ namespace RestaurantApp.Classes
             Console.WriteLine($"Brakujące godziny w miesiącu: {TakenHours(Hours)}");
         }
 
-        
+        public override string FullName()
+        {
+            { return $"{Person.FirstName} {Person.LastName}\n"; }
+        }
     }
 }

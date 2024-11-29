@@ -20,7 +20,7 @@ namespace RestaurantApp
             SpringMenu happyMeal1 = new SpringMenu();
             grandeMeal = grandeMeal.GrandeMenu("Grzanki z pasta z suszonych pomidorów oraz serem", "Krem z dyni", "Gęsina Św. Marcina", "Tiramisu truflowe", "Kompot jerzynowy");
             grandeMeal1 = grandeMeal1.GrandeMenu("Sałatka z nowalijek", "Krem z młodych ziemniaków i chrzanu", "Młoda perliczka", "Sernik cytrynowy", "Mus z jarmużu");
-            happyMeal = happyMeal.HappyMeal("Chrupiące bataty", "Kren z pora", "Placek po zbójnicku");
+            happyMeal = happyMeal.HappyMeal("Chrupiące bataty", "Krem z pora", "Placek po zbójnicku");
             happyMeal1 = happyMeal1.HappyMeal("Seler naciowy z sosem serowym", "Pikantny krem z pomidorów" ,"Skrzydełka buffalo");
 
             List<StaffBase> staffs = new List<StaffBase>();
@@ -37,10 +37,10 @@ namespace RestaurantApp
                 PositionEnum.Sous_Chef, 3500, DepartmentEnum.Kitchen, storehouse2, 145));
             staffs.Add(CreateStaff(
                 "Polska", "Mazowieckie", "Warszawa", "Dzika", "03-366",
-                "Marek", "Walczak", DateTime.Parse("1975-11-05"), "F",
+                "Marek", "Walczak", DateTime.Parse("1975-11-05"), "M",
                 PositionEnum.Pastry_Chef, 3500, DepartmentEnum.Kitchen, storehouse1, 195));
 
-                        
+              
 
             bool quit = false;
 
@@ -67,6 +67,7 @@ namespace RestaurantApp
                         case 8: message = "Czyszczenie konsoli"; Console.Clear(); Options(); break;
                         case 9: message = "Zapisywanie danych do pliku - format JSON"; break;
                         case 10: message = "Wyświetla wszystkie stanowiska: "; foreach(var staff in staffs) { staff.DisplayInfo(); }; break;
+                        case 11: message = "Obowiązki pracowników: "; ShowEmployee(staffs); break;
                         default: message = "Brak wyboru"; break;
                     }
                     Console.WriteLine(message);
@@ -90,6 +91,7 @@ namespace RestaurantApp
                 Console.WriteLine("\n\t8 - Wyczyść konsolę");
                 Console.WriteLine("\n\t9 - Zapisz do pliku - JSON");
                 Console.WriteLine("\n\t10 - Wyświetl wszystkie stanowiska\n");
+                Console.WriteLine("\n\t11 - Wyświetl obowiązki pracowników\n");
 
             }
 
@@ -109,8 +111,7 @@ namespace RestaurantApp
             //var lista2 = .GetAll();
 
         }
-
-
+      
         public static StaffBase CreateStaff(
             string country, string state, string city, string street, string postalCode,
             string firstName, string lastName, DateTime birthDate, string gender,
@@ -154,28 +155,44 @@ namespace RestaurantApp
             }
         }
 
-        
-        
-        //foreach (var staff in staffs)
-        //{
-        //    if (staffs != null)
-        //    {
-        //        staff.DisplayInfo();
-        //        if (staff is Chef chef)
-        //        {
-        //            chef.CheckMenu();
-        //            chef.TakenHours(150);
-        //        }
-        //        else if (staff is PastryChef pastry) 
-        //        {
-        //            pastry.PrepareDesert();
-        //        } 
-        //        else if (staff is SousChef sous)
-        //        {
-        //            sous.PrepareMainDish();
-        //        }
-        //    }
-    }
+        public static List<StaffBase> ShowEmployee(List<StaffBase> staffs)
+        {
+            //List<StaffBase> staffs = new List<StaffBase>();
+            foreach (var employee in staffs)
+            {
+                if (employee != null)
+                {
+                    employee.FullName();
+                    if (employee is Chef chef) { chef.CheckMenu(); }
+                    else if (employee is SousChef sousChef) { sousChef.PrepareMainDish(); }
+                    else if (employee is PastryChef pastryChef) { pastryChef.PrepareDesert(); }
+                    else { }
+                }
+                
+            }
+            return staffs;
+        }        
+
+            //foreach (var staff in staffs)
+            //{
+            //    if (staffs != null)
+            //    {
+            //        staff.DisplayInfo();
+            //        if (staff is Chef chef)
+            //        {
+            //            chef.CheckMenu();
+            //            chef.TakenHours(150);
+            //        }
+            //        else if (staff is PastryChef pastry) 
+            //        {
+            //            pastry.PrepareDesert();
+            //        } 
+            //        else if (staff is SousChef sous)
+            //        {
+            //            sous.PrepareMainDish();
+            //        }
+            //    }
+        }
 
 
 
