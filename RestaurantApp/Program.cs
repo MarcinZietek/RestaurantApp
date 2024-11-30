@@ -167,9 +167,9 @@ namespace RestaurantApp
                 if (employee != null)
                 {
                     employee.FullName();
-                    if (employee is Chef chef) { chef.ChefDuties(); }
-                    else if (employee is SousChef sousChef) { sousChef.PrepareMainDish(); }
-                    else if (employee is PastryChef pastryChef) { pastryChef.PrepareDesert(); }
+                    if (employee is Chef chef) { chef.PerformDuties(); chef.ReportWork(); }
+                    else if (employee is SousChef sousChef) { sousChef.PerformDuties(); sousChef.ReportWork(); }
+                    else if (employee is PastryChef pastryChef) { pastryChef.PerformDuties(); pastryChef.ReportWork(); }
                     else { Console.WriteLine("Nie ma pracownika"); }
                 }
             }

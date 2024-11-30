@@ -11,7 +11,7 @@ using RestaurantApp.Interfaces;
 
 namespace RestaurantApp.Classes
 {
-    public class Chef : StaffBase
+    public class Chef : StaffBase, IEmplyeeActions
     {
         private readonly TaskManager<string> _taskManager = new TaskManager<string>();
         public Chef() { }
@@ -37,6 +37,7 @@ namespace RestaurantApp.Classes
             //Console.WriteLine($"Podatek do zapłacenia: {GeneralHelper.CalculateTax(Salary)} ");
             Console.WriteLine($"Brakujące godziny w miesiącu: {TakenHours(Hours)}");
         }
+        [Obsolete]
         public void ChefDuties()
         {
             Console.WriteLine($"Szef {Person.LastName} {Person.FirstName} sprawdza menu... \n");
@@ -53,8 +54,20 @@ namespace RestaurantApp.Classes
         public void AssignTask(string task) => _taskManager.ScheduleTask(task);
         public void ComplitedTask() =>_taskManager.CompleteTask();
 
-        public void ReportTask() { Console.WriteLine( _taskManager.ReportTask()); } 
-        
+        public void ReportTask() { Console.WriteLine( _taskManager.ReportTask()); }
+
+        public void PerformDuties()
+        {
+            Console.WriteLine($"Szef {Person.LastName} {Person.FirstName} sprawdza menu... \n");
+            Console.WriteLine($"Szef {Person.LastName} {Person.FirstName} sprawdza jakość produktów... \n");
+            Console.WriteLine($"Szef {Person.LastName} {Person.FirstName} prezentuje danie dnia... \n");
+        }
+
+        public void ReportWork()
+        {
+            Console.WriteLine($"Szef {Person.LastName} {Person.FirstName} przyjmuje raport zespołu kucharskiego... \n");
+            Console.WriteLine($"Szef {Person.LastName} {Person.FirstName} przyjmuje raport zespołu cukierniczego... \n");
+        }
     }   
 
 }

@@ -10,9 +10,9 @@ using RestaurantApp.Interfaces;
 
 namespace RestaurantApp.Classes
 {
-    public class SousChef : StaffBase
+    public class SousChef : StaffBase, IEmplyeeActions
     {
-       
+        private readonly TaskManager<CustomTask> _taskManager = new TaskManager<CustomTask>();
         public SousChef(Person person, PositionEnum position, decimal salary, DepartmentEnum department, Storehouse storehouse, double hours)
            : base(person, salary, department, storehouse, hours)
         {
@@ -27,6 +27,7 @@ namespace RestaurantApp.Classes
         {
             return Hours - 180;
         }
+        [Obsolete]
         public void PrepareMainDish()
         {
             Console.WriteLine($"Mistrz gotowania {Person.LastName} {Person.FirstName} przygotowuje danie dnia. \n");
@@ -42,6 +43,22 @@ namespace RestaurantApp.Classes
         public override string FullName()
         {
             { return $"{Person.FirstName} {Person.LastName}\n"; }
+        }
+
+        public void AssignTask(CustomTask task) => _taskManager.ScheduleTask(task);
+        public void ComplitedTask() => _taskManager.CompleteTask();
+
+        public void ReportTask() { Console.WriteLine(_taskManager.ReportTask()); }
+
+        public void PerformDuties()
+        {
+            Console.WriteLine($"Mistrz gotowania {Person.LastName} {Person.FirstName} rozdysponowuje zadania. \n");
+            Console.WriteLine($"Mistrz gotowania {Person.LastName} {Person.FirstName} przygotowuje danie dnia. \n");
+        }
+
+        public void ReportWork()
+        {
+            Console.WriteLine($"Mistrz gotowania {Person.LastName} {Person.FirstName} raportuje swój zespół Szefowi kuchni. \n");
         }
     }
 }

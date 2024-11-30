@@ -10,7 +10,7 @@ using RestaurantApp.Interfaces;
 
 namespace RestaurantApp.Classes
 {
-    public class PastryChef : StaffBase
+    public class PastryChef : StaffBase, IEmplyeeActions
     {
        
         public PastryChef(Person person, PositionEnum position, decimal salary, DepartmentEnum department, Storehouse storehouse, double hours) 
@@ -27,6 +27,7 @@ namespace RestaurantApp.Classes
         {
             return Hours - 180;
         }
+        [Obsolete]
         public void PrepareDesert()
         {
             Console.WriteLine($"Mistrz cukiernictwa {Person.LastName} {Person.FirstName} przygotowuje deser dnia. \n");
@@ -42,6 +43,17 @@ namespace RestaurantApp.Classes
         public override string FullName()
         {
             { return $"{Person.FirstName} {Person.LastName}\n"; }
+        }
+
+        public void PerformDuties()
+        {
+            Console.WriteLine($"Mistrz cukiernictwa {Person.LastName} {Person.FirstName} rozdysponowuje zadania. \n");
+            Console.WriteLine($"Mistrz cukiernictwa {Person.LastName} {Person.FirstName} przygotowuje deser dnia. \n");
+        }
+
+        public void ReportWork()
+        {
+            Console.WriteLine($"Mistrz cukiernictwa {Person.LastName} {Person.FirstName} raportuje swój zespół Szefowi kuchni. \n");
         }
     }
 }
