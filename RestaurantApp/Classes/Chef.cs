@@ -13,11 +13,13 @@ namespace RestaurantApp.Classes
 {
     public class Chef : StaffBase
     {
+        private readonly TaskManager<string> _taskManager = new TaskManager<string>();
         public Chef() { }
         public Chef(Person person, PositionEnum position, decimal salary, DepartmentEnum department, Storehouse storehouse, double hours)
         : base(person, salary, department, storehouse, hours)
         {
             Position = PositionEnum.Chef;
+            Salary = salary;
         }
         public override decimal BonusSalary()
         {
@@ -35,14 +37,24 @@ namespace RestaurantApp.Classes
             //Console.WriteLine($"Podatek do zapłacenia: {GeneralHelper.CalculateTax(Salary)} ");
             Console.WriteLine($"Brakujące godziny w miesiącu: {TakenHours(Hours)}");
         }
-        public void CheckMenu()
+        public void ChefDuties()
         {
             Console.WriteLine($"Szef {Person.LastName} {Person.FirstName} sprawdza menu... \n");
+            ReportTask();
+            Console.WriteLine($"Szef {Person.LastName} {Person.FirstName} sprawdza jakość produktów... \n");
+            ReportTask();
+            Console.WriteLine($"Szef {Person.LastName} {Person.FirstName} prezentuje danie dnia... \n");
         }
 
         public override string FullName()
         {
             { return $"{Person.FirstName} {Person.LastName}\n"; }
         }
+        public void AssignTask(string task) => _taskManager.ScheduleTask(task);
+        public void ComplitedTask() =>_taskManager.CompleteTask();
+
+        public void ReportTask() { Console.WriteLine( _taskManager.ReportTask()); } 
+        
     }   
+
 }

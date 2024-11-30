@@ -12,8 +12,10 @@ namespace RestaurantApp
 
     internal class Program
     {
+
         static void Main(string[] args)
         {
+
             AutumnMenu grandeMeal = new AutumnMenu();
             AutumnMenu happyMeal = new AutumnMenu();
             SpringMenu grandeMeal1 = new SpringMenu();
@@ -21,7 +23,7 @@ namespace RestaurantApp
             grandeMeal = grandeMeal.GrandeMenu("Grzanki z pasta z suszonych pomidorów oraz serem", "Krem z dyni", "Gęsina Św. Marcina", "Tiramisu truflowe", "Kompot jerzynowy");
             grandeMeal1 = grandeMeal1.GrandeMenu("Sałatka z nowalijek", "Krem z młodych ziemniaków i chrzanu", "Młoda perliczka", "Sernik cytrynowy", "Mus z jarmużu");
             happyMeal = happyMeal.HappyMeal("Chrupiące bataty", "Krem z pora", "Placek po zbójnicku");
-            happyMeal1 = happyMeal1.HappyMeal("Seler naciowy z sosem serowym", "Pikantny krem z pomidorów" ,"Skrzydełka buffalo");
+            happyMeal1 = happyMeal1.HappyMeal("Seler naciowy z sosem serowym", "Pikantny krem z pomidorów", "Skrzydełka buffalo");
 
             List<StaffBase> staffs = new List<StaffBase>();
             Storehouse storehouse = new Storehouse(MeatEnum.Dziczyzna);
@@ -40,14 +42,14 @@ namespace RestaurantApp
                 "Marek", "Walczak", DateTime.Parse("1975-11-05"), "M",
                 PositionEnum.Pastry_Chef, 3500, DepartmentEnum.Kitchen, storehouse1, 195));
 
-              
+
 
             bool quit = false;
 
             //Wyświetlanie menu z możliwością ciągłego wyboru opcji. Użytkownik sam decyduje o zakończeniu programu
-            Options();         
-             
+            Options();
 
+            // Pętla wywołująca menu do momentu decyzji użytkownika o zakończniu programu
             while (!quit)
             {
                 try
@@ -61,13 +63,14 @@ namespace RestaurantApp
                         case 2: message = "Dodawanie pacowników"; break;
                         case 3: message = "Modyfikacja pracownika"; break;
                         case 4: message = "Usuwa pracownika"; break;
-                        case 5: message = "Wyświetla wybranego pracownika"; break;
+                        case 5: message = "Wyświetla pracowników z pensją powyżej 3500"; break;
                         case 6: Options(); break;
                         case 7: message = "Koniec programu"; quit = true; break;
                         case 8: message = "Czyszczenie konsoli"; Console.Clear(); Options(); break;
                         case 9: message = "Zapisywanie danych do pliku - format JSON"; break;
-                        case 10: message = "Wyświetla wszystkie stanowiska: "; foreach(var staff in staffs) { staff.DisplayInfo(); }; break;
+                        case 10: message = "Wyświetla wszystkie stanowiska: "; foreach (var staff in staffs) { staff.DisplayInfo(); }; break;
                         case 11: message = "Obowiązki pracowników: "; ShowEmployee(staffs); break;
+                        case 12: message = "Wyświetla zadania pracowników: "; ShowTask(staffs); break;
                         default: message = "Brak wyboru"; break;
                     }
                     Console.WriteLine(message);
@@ -90,8 +93,9 @@ namespace RestaurantApp
                 Console.WriteLine("\n\t7 - Zakoncz");
                 Console.WriteLine("\n\t8 - Wyczyść konsolę");
                 Console.WriteLine("\n\t9 - Zapisz do pliku - JSON");
-                Console.WriteLine("\n\t10 - Wyświetl wszystkie stanowiska\n");
-                Console.WriteLine("\n\t11 - Wyświetl obowiązki pracowników\n");
+                Console.WriteLine("\n\t10 - Wyświetl wszystkie stanowiska");
+                Console.WriteLine("\n\t11 - Wyświetl obowiązki pracowników");
+                Console.WriteLine("\n\t12 - Wyświetl zadania zlecone pracownikom\n");
 
             }
 
@@ -100,8 +104,8 @@ namespace RestaurantApp
             //manageCRUD.Create(new Person { FirstName = "test2" });
             //manageCRUD.Create(new Person { FirstName = "test3" });
             //manageCRUD.Create(new Person { FirstName = "test4" });
-            
-            
+
+
             //ManageCRUD<PastryChef> pastryCheef = new ManageCRUD<PastryChef>();
             //manageCRUD.Create(new Person { FirstName = "test1" });
             //manageCRUD.Create(new Person { FirstName = "test2" });
@@ -111,7 +115,7 @@ namespace RestaurantApp
             //var lista2 = .GetAll();
 
         }
-      
+
         public static StaffBase CreateStaff(
             string country, string state, string city, string street, string postalCode,
             string firstName, string lastName, DateTime birthDate, string gender,
@@ -125,14 +129,14 @@ namespace RestaurantApp
                 // Tworzenie obiektu Person (składa się z adresu oraz danych osobowych)
                 Person person = new Person(firstName, lastName, birthDate, gender, address);
 
-                
+
 
                 // Tworzenie obiektu Staff (kompozycja z obiektem Person)
-                StaffBase staff; 
+                StaffBase staff;
 
                 switch (position)
                 {
-                    case PositionEnum.Chef :
+                    case PositionEnum.Chef:
                         staff = new Chef(person, position, 4000, department, storehouse, hours);
                         break;
                     case PositionEnum.Sous_Chef:
@@ -155,60 +159,58 @@ namespace RestaurantApp
             }
         }
 
+        //Metoda wyświetlająca obowiązki pracowników.
         public static List<StaffBase> ShowEmployee(List<StaffBase> staffs)
         {
-            //List<StaffBase> staffs = new List<StaffBase>();
             foreach (var employee in staffs)
             {
                 if (employee != null)
                 {
                     employee.FullName();
-                    if (employee is Chef chef) { chef.CheckMenu(); }
+                    if (employee is Chef chef) { chef.ChefDuties(); }
                     else if (employee is SousChef sousChef) { sousChef.PrepareMainDish(); }
                     else if (employee is PastryChef pastryChef) { pastryChef.PrepareDesert(); }
-                    else { }
+                    else { Console.WriteLine("Nie ma pracownika"); }
                 }
-                
             }
-            return staffs;
-        }        
+            return staffs; //Zwracanie listy pracowników
+        }
 
-            //foreach (var staff in staffs)
-            //{
-            //    if (staffs != null)
-            //    {
-            //        staff.DisplayInfo();
-            //        if (staff is Chef chef)
-            //        {
-            //            chef.CheckMenu();
-            //            chef.TakenHours(150);
-            //        }
-            //        else if (staff is PastryChef pastry) 
-            //        {
-            //            pastry.PrepareDesert();
-            //        } 
-            //        else if (staff is SousChef sous)
-            //        {
-            //            sous.PrepareMainDish();
-            //        }
-            //    }
+        public static List<StaffBase> ShowTask(List<StaffBase> tasks)
+        {
+            foreach (var task in tasks)
+            {
+                if (task != null)
+                {
+                    if (task is Chef chef)
+                    {
+                        chef.AssignTask($"Szef kuchni prezentuje danie dnia... \n");
+                        chef.AssignTask($"Szef kuchni sprawdza jakość produktów... \n");
+                        chef.AssignTask($"Szef kuchni sprawdza menu... \n");                      
+                        chef.ReportTask();
+                        chef.ComplitedTask();
+                        chef.ReportTask();
+                    }
+                }
+            }
+            return tasks;
         }
 
 
 
 
-    //staffs.RemoveAll(x => x == null);
-    //string jsonString = JsonSerializer.Serialize(staffs);
-    //File.WriteAllText("Staff.json", jsonString);
-    //var jsonfile = File.ReadAllText("Staff.json");
-    //var deserializedJson = JsonSerializer.Deserialize<List<Staff>>(jsonfile);
-    //foreach (Staff item in deserializedJson) {
-    //    item.DisplayInfo();
-    //}
-    //}
+        //staffs.RemoveAll(x => x == null);
+        //string jsonString = JsonSerializer.Serialize(staffs);
+        //File.WriteAllText("Staff.json", jsonString);
+        //var jsonfile = File.ReadAllText("Staff.json");
+        //var deserializedJson = JsonSerializer.Deserialize<List<Staff>>(jsonfile);
+        //foreach (Staff item in deserializedJson) {
+        //    item.DisplayInfo();
+        //}
+        //}
 
-  
 
+    }
 }
 
 
