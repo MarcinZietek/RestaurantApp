@@ -84,7 +84,7 @@ namespace RestaurantApp
             //Wyświetlanie opcji 
             void Options()
             {
-                Console.WriteLine("\n\t1 - Pokaż wszystkich pracowników");
+                Console.WriteLine("\n\t1 - Pokaż wszystkie menu");
                 Console.WriteLine("\n\t2 - Dodaj pracownika");
                 Console.WriteLine("\n\t3 - Zmodyfikuj pracownika");
                 Console.WriteLine("\n\t4 - Usuń pracownika");
@@ -190,6 +190,12 @@ namespace RestaurantApp
                         chef.ReportTask();
                         chef.ComplitedTask();
                         chef.ReportTask();
+                    } else if (task is SousChef sousChef)
+                    {
+                        sousChef.AssignTask(new CustomTask{Title = "Mistrz kuchni sprawdza daty przydatności produktów", Deadline = DateTime.Now.AddDays(1)});
+                    } else if (task is PastryChef pastryChef)
+                    {
+                        pastryChef.AssignTask(new CustomTask { Title = "Mistrz cukiernictwa przygotowuje torty", Deadline = DateTime.Now.AddDays(2) });
                     }
                 }
             }

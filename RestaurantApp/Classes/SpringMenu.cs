@@ -87,7 +87,7 @@ namespace RestaurantApp.Classes
             }
             else if (Starter != null && Soup != null && Main != null && Pastry == null && Non_alcoholic_beverage == null)
             {
-                return $"HappyMeal jesienny: \nStarter: {Starter}\nZupa: {Soup}\ndanie główne: {Main}\n";
+                return $"HappyMeal wiosenny: \nStarter: {Starter}\nZupa: {Soup}\ndanie główne: {Main}\n";
             }
             else return $"Menu w trakcie komponowania";
 

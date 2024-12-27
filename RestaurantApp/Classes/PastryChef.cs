@@ -12,7 +12,7 @@ namespace RestaurantApp.Classes
 {
     public class PastryChef : StaffBase, IEmplyeeActions
     {
-       
+        private readonly TaskManager<CustomTask> _taskManager = new TaskManager<CustomTask>();
         public PastryChef(Person person, PositionEnum position, decimal salary, DepartmentEnum department, Storehouse storehouse, double hours) 
             :base (person, salary, department, storehouse, hours)
         {
@@ -45,6 +45,11 @@ namespace RestaurantApp.Classes
             { return $"{Person.FirstName} {Person.LastName}\n"; }
         }
 
+
+        public void AssignTask(CustomTask task) => _taskManager.ScheduleTask(task);
+        public void ComplitedTask() => _taskManager.CompleteTask();
+
+        public void ReportTask() { Console.WriteLine(_taskManager.ReportTask()); }
         public void PerformDuties()
         {
             Console.WriteLine($"Mistrz cukiernictwa {Person.LastName} {Person.FirstName} rozdysponowuje zadania. \n");
