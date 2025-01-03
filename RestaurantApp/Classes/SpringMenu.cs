@@ -8,53 +8,46 @@ using System.Threading.Tasks;
 
 namespace RestaurantApp.Classes
 {
-        public class SpringMenu : Menu, IMenu
+        public class SpringMenu : Menu, IMenu, IRepositoryCRUD<SpringMenu>
         {
         private double cost;
         public SpringMenu() { }
         public SpringMenu(string starter, string soup, string main) : base(starter, soup, main)
         {
-                Starter = starter;
-                Soup = soup;
-                Main = main;
-            }
-            public SpringMenu(string starter, string soup, string main, string pastry, string non_alcoholic_beverage)
-            {
-                Starter = starter;
-                Soup = soup;
-                Main = main;
-                Pastry = pastry;
-                Non_alcoholic_beverage = non_alcoholic_beverage;
-            }
-         
-           
-            public double Cost { get { return cost; } set { cost = value; } }
 
-            public SpringMenu HappyMeal(string Starter, string Soup, string Main)
-            {
-                SpringMenu menu = new SpringMenu(Starter, Soup, Main);
-                if (string.IsNullOrEmpty(Starter) || string.IsNullOrEmpty(Soup) || string.IsNullOrEmpty(Main))
-                {
-                    throw new ArgumentNullException("Nie można utworzyć zestawu, brak któregoś ze dań.");
-                }
-                else
-                {
-                    return menu;
-                }
-            }
+        }
+        public SpringMenu(string starter, string soup, string main, string pastry, string non_alcoholic_beverage) : base(starter, soup, main, pastry, non_alcoholic_beverage)
+        {
+          
+        }
 
-            public SpringMenu GrandeMenu(string Starter, string Soup, string Main, string Pastry, string Non_alcoholic_beverage)
+        public double Cost { get { return cost; } set { cost = value; } }
+
+        public SpringMenu HappyMeal(string Starter, string Soup, string Main)
+        {
+            SpringMenu menu = new SpringMenu(Starter, Soup, Main);
+            if (string.IsNullOrEmpty(Starter) || string.IsNullOrEmpty(Soup) || string.IsNullOrEmpty(Main))
             {
-                SpringMenu menu = new SpringMenu(Starter, Soup, Main, Pastry, Non_alcoholic_beverage);
-                if (string.IsNullOrEmpty(Starter) || string.IsNullOrEmpty(Soup) || string.IsNullOrEmpty(Main) || string.IsNullOrEmpty(Pastry) || string.IsNullOrEmpty(Non_alcoholic_beverage))
-                {
-                    throw new ArgumentNullException("Nie można utworzyć zestawu, brak któregoś ze dań.");
-                }
-                else
-                {
-                    return menu;
-                }
+                throw new ArgumentNullException("Nie można utworzyć zestawu, brak któregoś ze dań.");
             }
+            else
+            {
+                return menu;
+            }
+        }
+
+        public SpringMenu GrandeMenu(string Starter, string Soup, string Main, string Pastry, string Non_alcoholic_beverage)
+        {
+            SpringMenu menu = new SpringMenu(Starter, Soup, Main, Pastry, Non_alcoholic_beverage);
+            if (string.IsNullOrEmpty(Starter) || string.IsNullOrEmpty(Soup) || string.IsNullOrEmpty(Main) || string.IsNullOrEmpty(Pastry) || string.IsNullOrEmpty(Non_alcoholic_beverage))
+            {
+                throw new ArgumentNullException("Nie można utworzyć zestawu, brak któregoś ze dań.");
+            }
+            else
+            {
+                return menu;
+            }
+        }
 
         public override string ToString()
         {
@@ -69,12 +62,26 @@ namespace RestaurantApp.Classes
             else return $"Menu w trakcie komponowania";
 
         }
-        public void Menu()
+        public void DisplayMenu()
         {
             base.DisplayInfo();
-            //Console.WriteLine($"{ToString()}");
+            Console.WriteLine($"{ToString()}");
         }
 
+        public void Add(SpringMenu obj)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Update(SpringMenu obj)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Delete(SpringMenu obj)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
 

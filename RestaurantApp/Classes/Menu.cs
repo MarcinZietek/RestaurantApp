@@ -1,4 +1,5 @@
 ﻿using RestaurantApp.Abstracts;
+using RestaurantApp.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace RestaurantApp.Classes
 {
-    public class Menu : MenuBase
+    public class Menu : MenuBase, IMenu, IRepositoryCRUD<Menu>
     {
         private string non_alcoholic_beverage;
         private string alcoholic_beverage;
@@ -21,24 +22,29 @@ namespace RestaurantApp.Classes
 
         public Menu(string starter, string soup, string main)
         {
-            this.starter = starter;
-            this.soup = soup;
-            this.main = main;
+            Starter = starter;
+            Soup = soup;
+            Main = main;
         }
 
-        public Menu(string starter, string soup, string main, string pastry, string non_alcoholic_beverage) : this(starter, soup, main)
+        public Menu(string starter, string soup, string main, string pastry, string non_alcoholic_beverage) 
         {
+            Starter = starter;
+            Soup = soup;
+            Main = main;
+            Pastry = pastry;
+            Non_alcoholic_beverage = non_alcoholic_beverage;
         }
 
         public Menu(string non_alcoholic_beverage, string alcoholic_beverage, string starter, string soup, string salad, string main, string pastry)
         {
-            this.non_alcoholic_beverage = non_alcoholic_beverage;
-            this.alcoholic_beverage = alcoholic_beverage;
-            this.starter = starter;
-            this.soup = soup;
-            this.salad = salad;
-            this.main = main;
-            this.pastry = pastry;
+            Non_alcoholic_beverage = non_alcoholic_beverage;
+            Alcoholic_beverage = alcoholic_beverage;
+            Starter = starter;
+            Soup = soup;
+            Salad = salad;
+            Main = main;
+            Pastry = pastry;
             
         }
 
@@ -50,7 +56,23 @@ namespace RestaurantApp.Classes
         public string Salad { get { return salad; } set { salad = value; } }
         public string Main { get { return main; } set { main = value; } }
         public string Pastry { get { return pastry; } set { pastry = value; } }
-        public void DisplayInfo()
+
+        public void Add(Menu obj)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Delete(Menu obj)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Update(Menu obj)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void DisplayMenu()
         {
             base.DisplayInfo();
             Console.WriteLine($"{ToString()}");

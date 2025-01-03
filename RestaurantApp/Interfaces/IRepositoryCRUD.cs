@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace RestaurantApp.Interfaces
 {
-    public interface IPersonCRUD<T>
+    public interface IRepositoryCRUD<T>
     {
-        Person Create(T obj);
-        T Read(string key);
+        void Add(T obj);
+        //T Read(string key);
         void Update(T obj);
-        void Delete(string key);
+        void Delete(T obj);
         //IEnumerable<T> GetAll();
     }
 }

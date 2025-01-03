@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RestaurantApp.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace RestaurantApp.Classes
 {
-    public class Storehouse
+    public class Storehouse : IRepositoryCRUD<Storehouse>
     {
        
         private MeatEnum meat;
@@ -46,6 +47,20 @@ namespace RestaurantApp.Classes
             return $"Mięso: {Meat}\tRyby: {Fish}\tWarzywa: {Vegetable}\tPłyny: {Liquids}\n";
         }
 
+        public void Add(Storehouse obj)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Update(Storehouse obj)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Delete(Storehouse obj)
+        {
+            throw new NotImplementedException();
+        }
     }
 
     public enum MeatEnum

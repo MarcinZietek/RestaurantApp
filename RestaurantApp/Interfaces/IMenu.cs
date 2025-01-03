@@ -8,6 +8,6 @@ namespace RestaurantApp.Interfaces
 {
     public interface IMenu
     {
-        void Menu();
+        void DisplayMenu();
     }
 }

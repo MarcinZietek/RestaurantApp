@@ -59,7 +59,7 @@ namespace RestaurantApp
                     string message = null;
                     switch (choice)
                     {
-                        case 1: message = "Pokazuje wszystkie menu"; grandeMeal.Menu(); grandeMeal1.Menu(); happyMeal.Menu(); happyMeal1.Menu(); break;
+                        case 1: message = "Pokazuje wszystkie menu"; grandeMeal.DisplayMenu(); grandeMeal1.DisplayMenu(); happyMeal.DisplayMenu(); happyMeal1.DisplayMenu(); break;
                         case 2: message = "Dodawanie pacowników"; break;
                         case 3: message = "Modyfikacja pracownika"; break;
                         case 4: message = "Usuwa pracownika"; break;

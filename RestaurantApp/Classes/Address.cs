@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace RestaurantApp.Classes
 {
-    public class Address : IListObject<Address>
+    public class Address : IListObject<Address>, IRepositoryCRUD<Address>
     {
         private readonly List<Address> list = new List<Address>();
 
@@ -39,11 +39,26 @@ namespace RestaurantApp.Classes
         public string Country { get { return country; } set { country = value; } }
         public string Street { get { return street; } set { street = value; } }
 
+        public void Add(Address obj)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Delete(Address obj)
+        {
+            throw new NotImplementedException();
+        }
+
         public List<Address> GetAll()
         {
             return list;
         }
 
         public override string ToString() { return $"Kraj: {Country}\nWojewództwo: {State}\nMiasto: {City}\nUlica: {Street}\nKod pocztowy: {PostalCode}"; }
+
+        public void Update(Address obj)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

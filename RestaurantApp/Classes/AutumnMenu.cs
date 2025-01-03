@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace RestaurantApp.Classes
 {
-    public class AutumnMenu : Menu, IMenu
+    public class AutumnMenu : Menu, IMenu, IRepositoryCRUD<AutumnMenu>
     {
        
         private double cost;
@@ -62,10 +62,25 @@ namespace RestaurantApp.Classes
             }
             else return $"Menu w trakcie komponowania";
         }
-        public void Menu()
+        public void DisplayMenu()
         {
             base.DisplayInfo();
-            //Console.WriteLine($"{ToString()}");
+            Console.WriteLine($"{ToString()}");
+        }
+
+        public void Add(AutumnMenu obj)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Update(AutumnMenu obj)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Delete(AutumnMenu obj)
+        {
+            throw new NotImplementedException();
         }
     }
 }
