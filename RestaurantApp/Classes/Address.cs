@@ -17,7 +17,13 @@ namespace RestaurantApp.Classes
         private string street;
         private string postalCode;     
 
-        public Address() { }
+        public Address() {
+            Country = "Not specified";
+            State = "Not specified";
+            City = "Not specified";
+            Street = "Not specified";
+            PostalCode = "Not specified";
+        }
         public Address(string country, string state, string city, string street, string postalCode) { 
             City = city;    
             State = state;

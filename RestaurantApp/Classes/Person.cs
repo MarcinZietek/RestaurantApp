@@ -18,11 +18,12 @@ namespace RestaurantApp.Classes
         private string gender;
         private Address address;
 
-        public Person() {
-        
+        //Parametry domyślne konstruktora Person
+        public Person() {       
             _id = nextId++;
             FirstName = "Unknown";
             LastName = "Unknown";
+            BirthDate = DateTime.Parse("0000-00-00");
             Gender = "Unknown";
         }
         public Person(string firstName, string lastName, DateTime birthDate, string gender, Address address) {

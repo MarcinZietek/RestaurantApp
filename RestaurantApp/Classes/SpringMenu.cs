@@ -1,4 +1,5 @@
-﻿using RestaurantApp.Interfaces;
+﻿using RestaurantApp.Abstracts;
+using RestaurantApp.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace RestaurantApp.Classes
 {
-        public class SpringMenu : IMenu
+        public class SpringMenu : MenuBase, IMenu
         {
             private string non_alcoholic_beverage;
             private string alcoholic_beverage;
@@ -94,6 +95,7 @@ namespace RestaurantApp.Classes
         }
         public void Menu()
         {
+            base.DisplayInfo();
             Console.WriteLine($"{ToString()}");
         }
 

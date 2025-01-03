@@ -11,8 +11,7 @@ namespace RestaurantApp.Abstracts
 {
     public abstract class StaffBase 
     {
-        
-
+       
         private Person person;
         private PositionEnum position;
         private decimal salary;

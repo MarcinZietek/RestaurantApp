@@ -1,4 +1,5 @@
-﻿using RestaurantApp.Interfaces;
+﻿using RestaurantApp.Abstracts;
+using RestaurantApp.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace RestaurantApp.Classes
 {
-    public class AutumnMenu : IMenu
+    public class AutumnMenu : MenuBase, IMenu
     {
         private string non_alcoholic_beverage;
         private string alcoholic_beverage;
@@ -21,7 +22,7 @@ namespace RestaurantApp.Classes
         private double cost;
 
         public AutumnMenu() { }
-        public AutumnMenu(string starter, string soup, string main)
+        public AutumnMenu(string starter, string soup, string main) 
         {
             Starter = starter;
             Soup = soup;
@@ -35,8 +36,9 @@ namespace RestaurantApp.Classes
             Pastry = pastry;
             Non_alcoholic_beverage = non_alcoholic_beverage;
         }
-        public AutumnMenu(string non_alcoholic_beverage, string alcoholic_beverage, string starter, string soup, string salad, string main, string pastry, double cost)
+        public AutumnMenu( string non_alcoholic_beverage, string alcoholic_beverage, string starter, string soup, string salad, string main, string pastry, double cost) 
         {
+
             Non_alcoholic_beverage = non_alcoholic_beverage;
             Alcoholic_beverage = alcoholic_beverage;
             Starter = starter;
@@ -91,6 +93,7 @@ namespace RestaurantApp.Classes
         }
         public void Menu()
         {
+            base.DisplayInfo();
             Console.WriteLine($"{ToString()}");
         }
     }

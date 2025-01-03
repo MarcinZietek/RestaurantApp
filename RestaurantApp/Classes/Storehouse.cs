@@ -65,6 +65,6 @@ namespace RestaurantApp.Classes
 
     public enum DairyEnum
     {
-        Jajko, Ser_żółty, Ser_Biały, Jogurt, Śmietana, Mkleko
+        Jajko, Ser_żółty, Ser_Biały, Jogurt, Śmietana, Mleko
     }
 }
