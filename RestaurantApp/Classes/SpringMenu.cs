@@ -8,20 +8,12 @@ using System.Threading.Tasks;
 
 namespace RestaurantApp.Classes
 {
-        public class SpringMenu : MenuBase, IMenu
+        public class SpringMenu : Menu, IMenu
         {
-            private string non_alcoholic_beverage;
-            private string alcoholic_beverage;
-            private string starter;
-            private string soup;
-            private string salad;
-            private string main;
-            private string pastry;
-            private double cost;
-
-            public SpringMenu() { }
-            public SpringMenu(string starter, string soup, string main)
-            {
+        private double cost;
+        public SpringMenu() { }
+        public SpringMenu(string starter, string soup, string main) : base(starter, soup, main)
+        {
                 Starter = starter;
                 Soup = soup;
                 Main = main;
@@ -34,24 +26,8 @@ namespace RestaurantApp.Classes
                 Pastry = pastry;
                 Non_alcoholic_beverage = non_alcoholic_beverage;
             }
-            public SpringMenu(string non_alcoholic_beverage, string alcoholic_beverage, string starter, string soup, string salad, string main, string pastry, double cost)
-            {
-                Non_alcoholic_beverage = non_alcoholic_beverage;
-                Alcoholic_beverage = alcoholic_beverage;
-                Starter = starter;
-                Soup = soup;
-                Salad = salad;
-                Main = main;
-                Pastry = pastry;
-                Cost = cost;
-            }
-            public string Non_alcoholic_beverage { get { return non_alcoholic_beverage; } set { non_alcoholic_beverage = value; } }
-            public string Alcoholic_beverage { get { return alcoholic_beverage; } set { alcoholic_beverage = value; } }
-            public string Starter { get { return starter; } set { starter = value; } }
-            public string Soup { get { return soup; } set { soup = value; } }
-            public string Salad { get { return salad; } set { salad = value; } }
-            public string Main { get { return main; } set { main = value; } }
-            public string Pastry { get { return pastry; } set { pastry = value; } }
+         
+           
             public double Cost { get { return cost; } set { cost = value; } }
 
             public SpringMenu HappyMeal(string Starter, string Soup, string Main)
@@ -96,7 +72,7 @@ namespace RestaurantApp.Classes
         public void Menu()
         {
             base.DisplayInfo();
-            Console.WriteLine($"{ToString()}");
+            //Console.WriteLine($"{ToString()}");
         }
 
     }
