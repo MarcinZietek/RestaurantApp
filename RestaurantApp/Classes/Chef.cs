@@ -11,7 +11,7 @@ using RestaurantApp.Interfaces;
 
 namespace RestaurantApp.Classes
 {
-    public class Chef : StaffBase, IEmplyeeActions, IRepositoryCRUD<Chef>
+    public class Chef : StaffBase, IEmplyeeActions
     {
         private readonly TaskManager<string> _taskManager = new TaskManager<string>();
         public Chef() { }
@@ -69,20 +69,7 @@ namespace RestaurantApp.Classes
             Console.WriteLine($"Szef {Person.LastName} {Person.FirstName} przyjmuje raport zespołu cukierniczego... \n");
         }
 
-        public void Add(Chef obj)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Update(Chef obj)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Delete(Chef obj)
-        {
-            throw new NotImplementedException();
-        }
+      
     }   
 
 }

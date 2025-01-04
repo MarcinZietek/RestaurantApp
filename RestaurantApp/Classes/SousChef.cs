@@ -10,7 +10,7 @@ using RestaurantApp.Interfaces;
 
 namespace RestaurantApp.Classes
 {
-    public class SousChef : StaffBase, IEmplyeeActions, IRepositoryCRUD<SousChef>
+    public class SousChef : StaffBase, IEmplyeeActions
     {
         private readonly TaskManager<CustomTask> _taskManager = new TaskManager<CustomTask>();
         public SousChef(Person person, PositionEnum position, decimal salary, DepartmentEnum department, Storehouse storehouse, double hours)
@@ -60,20 +60,6 @@ namespace RestaurantApp.Classes
         {
             Console.WriteLine($"Mistrz gotowania {Person.LastName} {Person.FirstName} raportuje swój zespół Szefowi kuchni. \n");
         }
-
-        public void Add(SousChef obj)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Update(SousChef obj)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Delete(SousChef obj)
-        {
-            throw new NotImplementedException();
-        }
+    
     }
 }

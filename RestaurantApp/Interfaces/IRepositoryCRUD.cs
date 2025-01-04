@@ -10,9 +10,8 @@ namespace RestaurantApp.Interfaces
     public interface IRepositoryCRUD<T>
     {
         void Add(T obj);
-        //T Read(string key);
         void Update(T obj);
         void Delete(T obj);
-        //IEnumerable<T> GetAll();
+        IEnumerable<T> GetAll();
     }
 }

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace RestaurantApp.Classes
 {
-        public class SpringMenu : Menu, IMenu, IRepositoryCRUD<SpringMenu>
+        public class SpringMenu : Menu, IMenu
         {
         private double cost;
         public SpringMenu() { }
@@ -68,20 +68,6 @@ namespace RestaurantApp.Classes
             Console.WriteLine($"{ToString()}");
         }
 
-        public void Add(SpringMenu obj)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Update(SpringMenu obj)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Delete(SpringMenu obj)
-        {
-            throw new NotImplementedException();
-        }
     }
 }
 

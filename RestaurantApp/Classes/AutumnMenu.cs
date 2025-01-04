@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace RestaurantApp.Classes
 {
-    public class AutumnMenu : Menu, IMenu, IRepositoryCRUD<AutumnMenu>
+    public class AutumnMenu : Menu, IMenu
     {
        
         private double cost;
@@ -54,11 +54,11 @@ namespace RestaurantApp.Classes
         {
             if (Starter != null && Soup != null && Main != null && Pastry != null && Non_alcoholic_beverage != null)
             {
-                return $"Duży zestaw jesienny: \nStarter: {Starter}\nZupa: {Soup}\nDanie główne: {Main}\nDeser: {Pastry}\nNapój: {Non_alcoholic_beverage}\n";
+                return $"Duży zestaw jesienny: \nStarter: {Starter}, Zupa: {Soup}, Danie główne: {Main}, Deser: {Pastry}, Napój: {Non_alcoholic_beverage}\n";
             }
             else if (Starter != null && Soup != null && Main != null && Pastry == null && Non_alcoholic_beverage == null)
             {
-                return $"HappyMeal jesienny: \nStarter: {Starter}\nZupa: {Soup}\ndanie główne: {Main}\n";
+                return $"HappyMeal jesienny: \nStarter: {Starter}, Zupa: {Soup}, Danie główne: {Main}\n";
             }
             else return $"Menu w trakcie komponowania";
         }
@@ -68,19 +68,6 @@ namespace RestaurantApp.Classes
             Console.WriteLine($"{ToString()}");
         }
 
-        public void Add(AutumnMenu obj)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Update(AutumnMenu obj)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Delete(AutumnMenu obj)
-        {
-            throw new NotImplementedException();
-        }
+      
     }
 }

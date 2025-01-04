@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace RestaurantApp.Classes
 {
-    public class Menu : MenuBase, IMenu, IRepositoryCRUD<Menu>
+    public class Menu : MenuBase, IMenu
     {
         private string non_alcoholic_beverage;
         private string alcoholic_beverage;
@@ -62,20 +62,21 @@ namespace RestaurantApp.Classes
             throw new NotImplementedException();
         }
 
-        public void Delete(Menu obj)
+        public override string ToString()
         {
-            throw new NotImplementedException();
-        }
-
-        public void Update(Menu obj)
-        {
-            throw new NotImplementedException();
+            return $"Przystawka: {Starter}, Zupa: {Soup}, Danie główne: {Main}, Deser: {Pastry}, " +
+                   $"Napój bezalkoholowy: {Non_alcoholic_beverage}, Napój alkoholowy: {Alcoholic_beverage}\n";
         }
 
         public void DisplayMenu()
         {
             base.DisplayInfo();
             Console.WriteLine($"{ToString()}");
+        }
+
+        public IEnumerable<Menu> GetAll()
+        {
+            throw new NotImplementedException();
         }
     }
 }

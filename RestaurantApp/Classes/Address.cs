@@ -60,5 +60,10 @@ namespace RestaurantApp.Classes
         {
             throw new NotImplementedException();
         }
+
+        IEnumerable<Address> IRepositoryCRUD<Address>.GetAll()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

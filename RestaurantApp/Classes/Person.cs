@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace RestaurantApp.Classes
 {
-    public class Person : IRepositoryCRUD<Person>
+    public class Person 
     {       
         private static int nextId = 1;
 
@@ -63,19 +63,6 @@ namespace RestaurantApp.Classes
             return $"Id: {_id}\nImie: {FirstName}\nNazwisko: {LastName}\nWiek: {Age}\nPłeć: {Gender}\nAdres: {address}";
         }
 
-        public void Add(Person obj)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Update(Person obj)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Delete(Person obj)
-        {
-            throw new NotImplementedException();
-        }
+      
     }
 }
