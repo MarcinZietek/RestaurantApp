@@ -2,7 +2,7 @@
 using RestaurantApp.Abstracts;
 using RestaurantApp.Classes;
 using RestaurantApp.Enums;
-using RestaurantApp.Repositories;
+
 using System;
 using System.Reflection;
 using System.Security.Cryptography.X509Certificates;
@@ -43,12 +43,14 @@ namespace RestaurantApp
                 "Marek", "Walczak", DateTime.Parse("1975-11-05"), "M",
                 PositionEnum.Pastry_Chef, 3500, DepartmentEnum.Kitchen, storehouse1, 195));
 
-            MenuRepository menuRepo = new MenuRepository();
-
+            var menuRepo = new GenericRepository<Menu>();
             var menu1 = new Menu("Sałatka", "Pomidorowa", "Stek", "Sernik", "Herbata");
             var menu2 = new Menu("Grzanki z serem", "Minestrone", "Carbonara", "Tiramisu", "Wino Czerwone");
+            var springMenuRepo = new GenericRepository<SpringMenu>();
+            var autumnMenuRepo = new GenericRepository<AutumnMenu>();
+            var springMenu = new SpringMenu("Sałatka owocowa", "Zupa marchewkowa", "Łosoś", "Sernik", "Lemoniada");
+            var autumnMenu = new AutumnMenu("Chleb z masłem", "Rosół", "Schabowy", "Szarlotka", "Kompot");
 
-            
 
             bool quit = false;
 
@@ -65,10 +67,10 @@ namespace RestaurantApp
                     string message = null;
                     switch (choice)
                     {
-                        case 1: message = "Pokazuje wszystkie menu"; menuRepo.DisplayAllMenus(); grandeMeal.DisplayMenu(); grandeMeal1.DisplayMenu(); happyMeal.DisplayMenu(); happyMeal1.DisplayMenu(); break;
-                        case 2: message = "Dodawanie menu"; menuRepo.Add(menu1); menuRepo.Add(menu2); break;
-                        case 3: message = "Modyfikacja menu"; menu1.Starter = "Bruschetta"; menuRepo.Update(menu1); break;
-                        case 4: message = "Usuwa menu"; menuRepo.Delete(menu2); break;
+                        case 1: message = "Pokazuje wszystkie menu"; menuRepo.DisplayAllMenus(); grandeMeal.DisplayMenu(); grandeMeal1.DisplayMenu(); happyMeal.DisplayMenu(); happyMeal1.DisplayMenu(); autumnMenuRepo.DisplayAllMenus(); springMenuRepo.DisplayAllMenus(); break;
+                        case 2: message = "Dodawanie menu"; menuRepo.Add(menu1); menuRepo.Add(menu2); springMenuRepo.Add(springMenu); autumnMenuRepo.Add(autumnMenu); break;
+                        case 3: message = "Modyfikacja menu"; menu1.Starter = "Bruschetta"; menuRepo.Update(menu1); springMenu.Soup = "Krem z dyni"; springMenuRepo.Update(springMenu); break;
+                        case 4: message = "Usuwa menu"; menuRepo.Delete(menu2); autumnMenuRepo.Delete(autumnMenu); break;
                         case 5: message = "Wyświetla pracowników z pensją powyżej 3500"; break;
                         case 6: Options(); break;
                         case 7: message = "Koniec programu"; quit = true; break;
