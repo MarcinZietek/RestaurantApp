@@ -56,6 +56,7 @@ namespace RestaurantApp
             // Pętla wywołująca menu do momentu decyzji użytkownika o zakończniu programu
             while (!quit)
             {
+                Console.Clear();
                 try
                 {
                     Console.ForegroundColor = ConsoleColor.DarkBlue;
@@ -68,23 +69,79 @@ namespace RestaurantApp
                     Console.ResetColor();
                     Console.Write("Wybierz cyfrę");
                     Console.ForegroundColor = ConsoleColor.Magenta;
-                    Console.Write($" od {toNumberEmoji} {fromNumberEmoji} i \u001b[32mwciśnij ENTER\u001b[0m");                  
+                    Console.WriteLine($" 1 {toNumberEmoji} {fromNumberEmoji} 8 ");                  
                     Console.ResetColor();
-                    Console.WriteLine(" \u001b[32mLub wybierz liczbę\u001b[0m");
+                    Options();
                     int choice = int.Parse(Console.ReadLine());
                     string message = null;
                     switch (choice)
                     {
-                        case 1: message = "Menu"; menuRepo.DisplayAllMenus(); grandeMeal.DisplayMenu(); grandeMeal1.DisplayMenu(); happyMeal.DisplayMenu(); happyMeal1.DisplayMenu(); autumnMenuRepo.DisplayAllMenus(); springMenuRepo.DisplayAllMenus(); break;
-                        case 2: message = "Dodawanie menu"; menuRepo.Add(menu1); menuRepo.Add(menu2); springMenuRepo.Add(springMenu); autumnMenuRepo.Add(autumnMenu); break;
-                        case 3: message = "Modyfikacja menu"; menu1.Starter = "Bruschetta"; menuRepo.Update(menu1); springMenu.Soup = "Krem z dyni"; springMenuRepo.Update(springMenu); break;
-                        case 4: message = "Usuwa menu"; menuRepo.Delete(menu2); autumnMenuRepo.Delete(autumnMenu); break;
-                        case 5: message = "Wyświetla pracowników z pensją powyżej 3500"; break;
-                        case 6: Options(); break;
-                        case 7: message = "Czyszczenie konsoli"; Console.Clear(); Options(); break;
-                        case 8: message = "Koniec programu"; quit = true; break;
-                        case 9: message = "Zapisywanie danych do pliku - format JSON"; break;
-                       
+                        case 1: 
+                            bool inSubMenu = true;
+                            while (inSubMenu)
+                            {
+                                Console.Clear();
+                                Console.ForegroundColor = ConsoleColor.DarkBlue;
+                                Console.WriteLine("----------------------------------------------------------------------------------------------------------------------");
+                                Console.WriteLine("|                                               Menu Options                                                         |");
+                                Console.WriteLine("----------------------------------------------------------------------------------------------------------------------");
+                                Console.ResetColor();
+                                Console.WriteLine("\t1 - Wyświetl menu");
+                                Console.WriteLine("\t2 - Dodaj menu");
+                                Console.WriteLine("\t3 - Zmodyfikuj menu");
+                                Console.WriteLine("\t4 - Usuń menu");
+                                Console.WriteLine("\t0 - Powrót do menu głównego");
+                                Console.ForegroundColor = ConsoleColor.Blue;
+                                Console.Write("\nWybierz opcję: ");
+                                Console.ResetColor();
+                                Console.Write("Wybierz cyfrę");
+                                Console.ForegroundColor = ConsoleColor.Magenta;
+                                Console.WriteLine($" 1 {toNumberEmoji} {fromNumberEmoji} 4");
+                                Console.ResetColor();
+
+                                int subMenuChoice = int.Parse(Console.ReadLine());
+                                switch (subMenuChoice)
+                                {
+                                    case 1:
+                                        Console.WriteLine("Wyświetlanie menu...");
+                                        menuRepo.DisplayAllMenus(); grandeMeal.DisplayMenu(); grandeMeal1.DisplayMenu(); happyMeal.DisplayMenu(); happyMeal1.DisplayMenu(); autumnMenuRepo.DisplayAllMenus(); springMenuRepo.DisplayAllMenus(); 
+                                        break;
+                                    case 2:
+                                        Console.WriteLine("Dodawanie menu...");
+                                        menuRepo.Add(menu1); menuRepo.Add(menu2); springMenuRepo.Add(springMenu); autumnMenuRepo.Add(autumnMenu); 
+                                        break;
+                                    case 3:
+                                        Console.WriteLine("Modyfikowanie menu...");
+                                        menu1.Starter = "Bruschetta"; menuRepo.Update(menu1); springMenu.Soup = "Krem z dyni"; springMenuRepo.Update(springMenu); 
+                                        menuRepo.Update(menu1);
+                                        break;
+                                    case 4:
+                                        Console.WriteLine("Usuwanie menu...");
+                                        menuRepo.Delete(menu2); autumnMenuRepo.Delete(autumnMenu);
+                                        break;
+                                    case 0:
+                                        inSubMenu = false;
+                                        Console.WriteLine("Powrót do menu głównego...");
+                                        break;
+                                    default:
+                                        Console.WriteLine("Niepoprawny wybór.");
+                                        break;
+                                }
+
+                                if (inSubMenu)
+                                {
+                                    Console.WriteLine("\nWciśnij dowolny klawisz, aby kontynuować...");
+                                    Console.ReadKey();
+                                }
+
+                            }                     
+                            break;
+                        case 2: message = "Pracownicy"; break;
+                        case 3: message = "Produkty"; break;
+                        case 4: message = "Pliki";  break;
+                        case 5: message = "Zestawienia"; break;
+                        case 6: Options(); break;        
+                        case 0: message = "Koniec programu"; quit = true; break;                     
                         default: message = "Brak wyboru"; break;
                     }
                     Console.WriteLine(message);
@@ -99,15 +156,11 @@ namespace RestaurantApp
             void Options()
             {
                 Console.WriteLine("\n\t1 - Menu");
-                Console.WriteLine("\n\t2 - Dodaj menu");
-                Console.WriteLine("\n\t3 - Zmodyfikuj menu");
-                Console.WriteLine("\n\t4 - Usuń menu");
+                Console.WriteLine("\n\t2 - Pracownicy");
+                Console.WriteLine("\n\t3 - Produkty");
+                Console.WriteLine("\n\t4 - Zestawienia");
                 Console.WriteLine("\n\t5 - Wyświetl wybranego pracownika");
-                Console.WriteLine("\n\t6 - Wybor opcji");
-                Console.WriteLine("\n\t7 - Wyczyść konsolę");
-                Console.WriteLine("\n\t8 - Koniec programu");
-                Console.WriteLine("\n\t9 - Zapisz do pliku - JSON");
-                
+                Console.WriteLine("\n\t0 - Koniec programu");                             
             }
            
         }
