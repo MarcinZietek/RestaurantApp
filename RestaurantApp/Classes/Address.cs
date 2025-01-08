@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace RestaurantApp.Classes
 {
-    public class Address : IListObject<Address>, IRepositoryCRUD<Address>
+    public class Address : IListObject<Address>, ICrudRepository<Address>
     {
         private readonly List<Address> list = new List<Address>();
 
@@ -61,7 +61,7 @@ namespace RestaurantApp.Classes
             throw new NotImplementedException();
         }
 
-        IEnumerable<Address> IRepositoryCRUD<Address>.GetAll()
+        IEnumerable<Address> ICrudRepository<Address>.GetAll()
         {
             throw new NotImplementedException();
         }

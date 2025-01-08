@@ -5,11 +5,11 @@ using System.Linq;
 
 namespace RestaurantApp.Classes
 {
-    public class GenericRepository<T> : IRepositoryCRUD<T> where T : Menu
+    public class GenericCrudRepository<T> : ICrudRepository<T> where T : Menu
     {
         private readonly List<T> items;
 
-        public GenericRepository()
+        public GenericCrudRepository()
         {
             items = new List<T>();
         }

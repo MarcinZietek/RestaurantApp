@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace RestaurantApp.Interfaces
 {
-    public interface IRepositoryCRUD<T>
+    public interface ICrudRepository<T>
     {
         void Add(T obj);
         void Update(T obj);

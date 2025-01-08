@@ -39,11 +39,11 @@ namespace RestaurantApp
 
            
 
-            var menuRepo = new GenericRepository<Menu>();
+            var menuRepo = new GenericCrudRepository<Menu>();
             var menu1 = new Menu("Sałatka", "Pomidorowa", "Stek", "Sernik", "Herbata");
             var menu2 = new Menu("Grzanki z serem", "Minestrone", "Carbonara", "Tiramisu", "Wino Czerwone");
-            var springMenuRepo = new GenericRepository<SpringMenu>();
-            var autumnMenuRepo = new GenericRepository<AutumnMenu>();
+            var springMenuRepo = new GenericCrudRepository<SpringMenu>();
+            var autumnMenuRepo = new GenericCrudRepository<AutumnMenu>();
             var springMenu = new SpringMenu("Sałatka owocowa", "Zupa marchewkowa", "Łosoś", "Sernik", "Lemoniada");
             var autumnMenu = new AutumnMenu("Chleb z masłem", "Rosół", "Schabowy", "Szarlotka", "Kompot");
 
@@ -136,7 +136,132 @@ namespace RestaurantApp
 
                             }                     
                             break;
-                        case 2: message = "Pracownicy"; break;
+                        case 2:
+                            bool inSubEmployee = true;
+                            while (inSubEmployee)
+                            {
+                                Console.Clear();
+                                Console.ForegroundColor = ConsoleColor.DarkBlue;
+                                Console.WriteLine("----------------------------------------------------------------------------------------------------------------------");
+                                Console.WriteLine("|                                               Employee Options                                                     |");
+                                Console.WriteLine("----------------------------------------------------------------------------------------------------------------------");
+                                Console.ResetColor();
+                                Console.WriteLine("\t1 - Wyświetlanie pracowników...");
+                                Console.WriteLine("\t2 - Dodawanie pracowników...");
+                                Console.WriteLine("\t3 - Modyfikowanie pracowników...");
+                                Console.WriteLine("\t4 - Usuwanie pracowników...");
+                                Console.WriteLine("\t5 - Zestawienia pracowników...");
+                                Console.WriteLine("\t0 - Powrót do menu głównego");
+                                Console.ForegroundColor = ConsoleColor.Blue;
+                                Console.Write("\nWybierz opcję: ");
+                                Console.ResetColor();
+                                Console.Write("Wybierz cyfrę");
+                                Console.ForegroundColor = ConsoleColor.Magenta;
+                                Console.WriteLine($" 1 {toNumberEmoji} {fromNumberEmoji} 4");
+                                Console.ResetColor();
+
+                                int subMenuChoice = int.Parse(Console.ReadLine());
+                                switch (subMenuChoice)
+                                {
+                                    case 1:
+                                        Console.WriteLine("Wyświetlanie pracowników...");
+                                        
+                                        break;
+                                    case 2:
+                                        Console.WriteLine("Dodawanie pracowników...");
+                                        
+                                        break;
+                                    case 3:
+                                        Console.WriteLine("Modyfikowanie pracowników...");
+                                        
+                                        break;
+                                    case 4:
+                                        Console.WriteLine("Usuwanie pracowników...");
+                                    
+                                        break;
+                                    case 5:
+                                        Console.WriteLine("Zestawienia pracowników...");
+                                        bool inSubEmployeeList = true;
+                                        while (inSubEmployeeList)
+                                        {
+                                            Console.Clear();
+                                            Console.ForegroundColor = ConsoleColor.DarkBlue;
+                                            Console.WriteLine("----------------------------------------------------------------------------------------------------------------------");
+                                            Console.WriteLine("|                                               Employee Lists                                                       |");
+                                            Console.WriteLine("----------------------------------------------------------------------------------------------------------------------");
+                                            Console.ResetColor();
+                                            Console.WriteLine("\t1 - Wyświetlanie pracowników w departamencie kuchni");
+                                            Console.WriteLine("\t2 - Wyświetlanie pracowników w departamencie sali");
+                                            Console.WriteLine("\t3 - Wyświetlanie pracowników w zależności od stanowiska");
+                                            Console.WriteLine("\t4 - Wyświetl pracowników w zależności od płacy");
+                                            Console.WriteLine("\t5 - Wyświetl pracowników w zależności od stażu");
+                                            Console.WriteLine("\t0 - Powrót do menu głównego");
+                                            Console.ForegroundColor = ConsoleColor.Blue;
+                                            Console.Write("\nWybierz opcję: ");
+                                            Console.ResetColor();
+                                            Console.Write("Wybierz cyfrę");
+                                            Console.ForegroundColor = ConsoleColor.Magenta;
+                                            Console.WriteLine($" 1 {toNumberEmoji} {fromNumberEmoji} 4");
+                                            Console.ResetColor();
+
+                                            int subEmployeeChoice = int.Parse(Console.ReadLine());
+                                            switch (subEmployeeChoice)
+                                            {
+                                                case 1:
+                                                    Console.WriteLine("Wyświetlanie pracowników w departamencie kuchni");
+
+                                                    break;
+                                                case 2:
+                                                    Console.WriteLine("Wyświetlanie pracowników w departamencie sali");
+
+                                                    break;
+                                                case 3:
+                                                    Console.WriteLine("Wyświetlanie pracowników w zależności od stanowiska");
+
+                                                    break;
+                                                case 4:
+                                                    Console.WriteLine("Wyświetl pracowników w zależności od płacy");
+
+                                                    break;
+                                                case 5:
+                                                    Console.WriteLine("Wyświetl pracowników w zależności od stażu");
+
+                                                    break;
+                                                case 0:
+                                                    inSubEmployeeList = false;
+                                                    Console.WriteLine("Powrót do menu głównego...");
+                                                    break;
+                                                default:
+                                                    Console.WriteLine("Niepoprawny wybór.");
+                                                    break;
+                                            }
+
+                                            if (inSubEmployeeList)
+                                            {
+                                                Console.WriteLine("\nWciśnij dowolny klawisz, aby kontynuować...");
+                                                Console.ReadKey();
+                                            }
+
+                                        }
+                                     
+                                        break;
+                                    case 0:
+                                        inSubMenu = false;
+                                        Console.WriteLine("Powrót do menu głównego...");
+                                        break;
+                                    default:
+                                        Console.WriteLine("Niepoprawny wybór.");
+                                        break;
+                                }
+
+                                if (inSubEmployee)
+                                {
+                                    Console.WriteLine("\nWciśnij dowolny klawisz, aby kontynuować...");
+                                    Console.ReadKey();
+                                }
+
+                            }
+                            break;
                         case 3: message = "Produkty"; break;
                         case 4: message = "Pliki";  break;
                         case 5: message = "Zestawienia"; break;
