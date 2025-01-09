@@ -16,6 +16,10 @@ namespace RestaurantApp.Classes
 
         public void Add(T obj)
         {
+            if (obj == null)
+            {
+                throw new ArgumentNullException(nameof(obj), "Menu nie może być puste");
+            }
             items.Add(obj);
             Console.WriteLine($"{typeof(T).Name} dodano pomyślnie.");
         }

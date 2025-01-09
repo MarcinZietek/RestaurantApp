@@ -7,133 +7,22 @@
       "RelativeMoniker": "D:0:0:{AE35D89A-D3D2-4519-944B-D63BEF456BF2}|RestaurantApp\\RestaurantApp.csproj|solutionrelative:restaurantapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AE35D89A-D3D2-4519-944B-D63BEF456BF2}|RestaurantApp\\RestaurantApp.csproj|c:\\users\\developer\\source\\repos\\restaurantapp\\restaurantapp\\abstracts\\staffbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AE35D89A-D3D2-4519-944B-D63BEF456BF2}|RestaurantApp\\RestaurantApp.csproj|solutionrelative:restaurantapp\\abstracts\\staffbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AE35D89A-D3D2-4519-944B-D63BEF456BF2}|RestaurantApp\\RestaurantApp.csproj|c:\\users\\developer\\source\\repos\\restaurantapp\\restaurantapp\\abstracts\\menubase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AE35D89A-D3D2-4519-944B-D63BEF456BF2}|RestaurantApp\\RestaurantApp.csproj|solutionrelative:restaurantapp\\abstracts\\menubase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AE35D89A-D3D2-4519-944B-D63BEF456BF2}|RestaurantApp\\RestaurantApp.csproj|c:\\users\\developer\\source\\repos\\restaurantapp\\restaurantapp\\interfaces\\icrudrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AE35D89A-D3D2-4519-944B-D63BEF456BF2}|RestaurantApp\\RestaurantApp.csproj|solutionrelative:restaurantapp\\interfaces\\icrudrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{AE35D89A-D3D2-4519-944B-D63BEF456BF2}|RestaurantApp\\RestaurantApp.csproj|c:\\users\\developer\\source\\repos\\restaurantapp\\restaurantapp\\repositories\\genericcrudrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AE35D89A-D3D2-4519-944B-D63BEF456BF2}|RestaurantApp\\RestaurantApp.csproj|solutionrelative:restaurantapp\\repositories\\genericcrudrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AE35D89A-D3D2-4519-944B-D63BEF456BF2}|RestaurantApp\\RestaurantApp.csproj|c:\\users\\developer\\source\\repos\\restaurantapp\\restaurantapp\\repositories\\genericmanagerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AE35D89A-D3D2-4519-944B-D63BEF456BF2}|RestaurantApp\\RestaurantApp.csproj|solutionrelative:restaurantapp\\repositories\\genericmanagerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AE35D89A-D3D2-4519-944B-D63BEF456BF2}|RestaurantApp\\RestaurantApp.csproj|c:\\users\\developer\\source\\repos\\restaurantapp\\restaurantapp\\interfaces\\itaskmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AE35D89A-D3D2-4519-944B-D63BEF456BF2}|RestaurantApp\\RestaurantApp.csproj|solutionrelative:restaurantapp\\interfaces\\itaskmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AE35D89A-D3D2-4519-944B-D63BEF456BF2}|RestaurantApp\\RestaurantApp.csproj|c:\\users\\developer\\source\\repos\\restaurantapp\\restaurantapp\\classes\\obsolete.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AE35D89A-D3D2-4519-944B-D63BEF456BF2}|RestaurantApp\\RestaurantApp.csproj|solutionrelative:restaurantapp\\classes\\obsolete.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
-      "VerticalTabListWidth": 256,
+      "VerticalTabListWidth": 100,
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 1,
           "Children": [
             {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "MenuBase.cs",
-              "DocumentMoniker": "C:\\Users\\Developer\\source\\repos\\RestaurantApp\\RestaurantApp\\Abstracts\\MenuBase.cs",
-              "RelativeDocumentMoniker": "RestaurantApp\\Abstracts\\MenuBase.cs",
-              "ToolTip": "C:\\Users\\Developer\\source\\repos\\RestaurantApp\\RestaurantApp\\Abstracts\\MenuBase.cs",
-              "RelativeToolTip": "RestaurantApp\\Abstracts\\MenuBase.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-08T15:52:55.363Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "StaffBase.cs",
-              "DocumentMoniker": "C:\\Users\\Developer\\source\\repos\\RestaurantApp\\RestaurantApp\\Abstracts\\StaffBase.cs",
-              "RelativeDocumentMoniker": "RestaurantApp\\Abstracts\\StaffBase.cs",
-              "ToolTip": "C:\\Users\\Developer\\source\\repos\\RestaurantApp\\RestaurantApp\\Abstracts\\StaffBase.cs",
-              "RelativeToolTip": "RestaurantApp\\Abstracts\\StaffBase.cs",
-              "ViewState": "AgIAAB0AAAAAAAAAAAAwwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-08T15:52:09.087Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "ITaskManager.cs",
-              "DocumentMoniker": "C:\\Users\\Developer\\source\\repos\\RestaurantApp\\RestaurantApp\\Interfaces\\ITaskManager.cs",
-              "RelativeDocumentMoniker": "RestaurantApp\\Interfaces\\ITaskManager.cs",
-              "ToolTip": "C:\\Users\\Developer\\source\\repos\\RestaurantApp\\RestaurantApp\\Interfaces\\ITaskManager.cs",
-              "RelativeToolTip": "RestaurantApp\\Interfaces\\ITaskManager.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-08T15:47:23.386Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ICrudRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Developer\\source\\repos\\RestaurantApp\\RestaurantApp\\Interfaces\\ICrudRepository.cs",
-              "RelativeDocumentMoniker": "RestaurantApp\\Interfaces\\ICrudRepository.cs",
-              "ToolTip": "C:\\Users\\Developer\\source\\repos\\RestaurantApp\\RestaurantApp\\Interfaces\\ICrudRepository.cs",
-              "RelativeToolTip": "RestaurantApp\\Interfaces\\ICrudRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-08T15:46:23.71Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "GenericManagerRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Developer\\source\\repos\\RestaurantApp\\RestaurantApp\\Repositories\\GenericManagerRepository.cs",
-              "RelativeDocumentMoniker": "RestaurantApp\\Repositories\\GenericManagerRepository.cs",
-              "ToolTip": "C:\\Users\\Developer\\source\\repos\\RestaurantApp\\RestaurantApp\\Repositories\\GenericManagerRepository.cs",
-              "RelativeToolTip": "RestaurantApp\\Repositories\\GenericManagerRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-08T15:46:19.736Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Obsolete.cs",
-              "DocumentMoniker": "C:\\Users\\Developer\\source\\repos\\RestaurantApp\\RestaurantApp\\Classes\\Obsolete.cs",
-              "RelativeDocumentMoniker": "RestaurantApp\\Classes\\Obsolete.cs",
-              "ToolTip": "C:\\Users\\Developer\\source\\repos\\RestaurantApp\\RestaurantApp\\Classes\\Obsolete.cs",
-              "RelativeToolTip": "RestaurantApp\\Classes\\Obsolete.cs",
-              "ViewState": "AgIAANIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-08T15:33:07.677Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "GenericCrudRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Developer\\source\\repos\\RestaurantApp\\RestaurantApp\\Repositories\\GenericCrudRepository.cs",
-              "RelativeDocumentMoniker": "RestaurantApp\\Repositories\\GenericCrudRepository.cs",
-              "ToolTip": "C:\\Users\\Developer\\source\\repos\\RestaurantApp\\RestaurantApp\\Repositories\\GenericCrudRepository.cs",
-              "RelativeToolTip": "RestaurantApp\\Repositories\\GenericCrudRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-03T20:31:07.152Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
             },
             {
               "$type": "Document",
@@ -143,9 +32,22 @@
               "RelativeDocumentMoniker": "RestaurantApp\\Program.cs",
               "ToolTip": "C:\\Users\\Developer\\source\\repos\\RestaurantApp\\RestaurantApp\\Program.cs",
               "RelativeToolTip": "RestaurantApp\\Program.cs",
-              "ViewState": "AgIAAOoAAAAAAAAAAAAAAO4AAABBAAAAAAAAAA==",
+              "ViewState": "AgIAAKsAAAAAAAAAAAAswLoAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-15T20:22:55.496Z",
+              "WhenOpened": "2025-01-09T16:18:11.657Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "GenericCrudRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Developer\\source\\repos\\RestaurantApp\\RestaurantApp\\Repositories\\GenericCrudRepository.cs",
+              "RelativeDocumentMoniker": "RestaurantApp\\Repositories\\GenericCrudRepository.cs",
+              "ToolTip": "C:\\Users\\Developer\\source\\repos\\RestaurantApp\\RestaurantApp\\Repositories\\GenericCrudRepository.cs",
+              "RelativeToolTip": "RestaurantApp\\Repositories\\GenericCrudRepository.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAAAA4AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-09T16:04:28.616Z",
               "EditorCaption": ""
             }
           ]

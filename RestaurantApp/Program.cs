@@ -108,7 +108,63 @@ namespace RestaurantApp
                                         break;
                                     case 2:
                                         Console.WriteLine("Dodawanie menu...");
-                                        menuRepo.Add(menu1); menuRepo.Add(menu2); springMenuRepo.Add(springMenu); autumnMenuRepo.Add(autumnMenu); 
+                                          
+                                        bool inAddMenu = true;
+                                        while (inAddMenu)
+                                        {
+                                            Console.Clear();
+                                            Console.ForegroundColor = ConsoleColor.DarkBlue;
+                                            Console.WriteLine("----------------------------------------------------------------------------------------------------------------------");
+                                            Console.WriteLine("|                                               Create Menu                                                          |");
+                                            Console.WriteLine("----------------------------------------------------------------------------------------------------------------------");
+                                            Console.ResetColor();
+                                            Console.WriteLine("\t1 - Dodaj Menu Karty");
+                                            Console.WriteLine("\t2 - Dodaj Menu Wiosenne");
+                                            Console.WriteLine("\t3 - Dodaj Menu Letnie");
+                                            Console.WriteLine("\t4 - Dodaj Menu Jesienne");
+                                            Console.WriteLine("\t5 - Dodaj Menu Zimowe");
+                                            Console.WriteLine("\t0 - Powrót do menu głównego");
+                                            Console.ForegroundColor = ConsoleColor.Blue;
+                                            Console.Write("\nWybierz opcję: ");
+                                            Console.ResetColor();
+                                            Console.Write("Wybierz cyfrę");
+                                            Console.ForegroundColor = ConsoleColor.Magenta;
+                                            Console.WriteLine($" 1 {toNumberEmoji} {fromNumberEmoji} 4");
+                                            Console.ResetColor();
+
+                                            int addMenuChoice = int.Parse(Console.ReadLine());
+                                            switch (addMenuChoice)
+                                            {
+                                                case 1: Console.WriteLine("Dodaj Menu Karty");
+                                                    menuRepo.Add(menu1); menuRepo.Add(menu2);
+                                                    break;
+                                                case 2: Console.WriteLine("Dodaj Menu Wiosenne");
+                                                    springMenuRepo.Add(springMenu);
+                                                    break;
+                                                case 3: Console.WriteLine("Dodaj Menu Letnie");
+                                                    Console.WriteLine("Tworzenie menu letniego...");
+                                                    break;
+                                                case 4: Console.WriteLine("Dodaj Menu Jesienne");
+                                                    autumnMenuRepo.Add(autumnMenu);
+                                                    break;
+                                                case 5: Console.WriteLine("Dodaj Menu Zimowe");
+                                                    Console.WriteLine("Tworzenie menu zimowego...");
+                                                    break;
+                                                case 0:
+                                                    inAddMenu = false;
+                                                    Console.WriteLine("Powrót do menu głównego...");
+                                                    break;
+                                                default:
+                                                    Console.WriteLine("Niepoprawny wybór.");
+                                                    break;
+                                            }
+
+                                            if (inAddMenu)
+                                            {
+                                                Console.WriteLine("\nWciśnij dowolny klawisz, aby kontynuować...");
+                                                Console.ReadKey();
+                                            }
+                                        }
                                         break;
                                     case 3:
                                         Console.WriteLine("Modyfikowanie menu...");
@@ -133,7 +189,6 @@ namespace RestaurantApp
                                     Console.WriteLine("\nWciśnij dowolny klawisz, aby kontynuować...");
                                     Console.ReadKey();
                                 }
-
                             }                     
                             break;
                         case 2:
