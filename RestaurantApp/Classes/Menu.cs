@@ -59,28 +59,20 @@ namespace RestaurantApp.Classes
         public string Soup { get { return soup; } set { soup = value; } }
         public string Salad { get { return salad; } set { salad = value; } }
         public string Main { get { return main; } set { main = value; } }
-        public string Pastry { get { return pastry; } set { pastry = value; } }
-
-        public void Add(Menu obj)
-        {
-            throw new NotImplementedException();
-        }
+        public string Pastry { get { return pastry; } set { pastry = value; } }    
 
         public override string ToString()
         {
-            return $"Przystawka: {Starter}, Zupa: {Soup}, Danie główne: {Main}, Deser: {Pastry}, " +
+            return $"Id: {MenuId}, Przystawka: {Starter}, Zupa: {Soup}, Danie główne: {Main}, Deser: {Pastry}, " +
                    $"Napój bezalkoholowy: {Non_alcoholic_beverage}, Napój alkoholowy: {Alcoholic_beverage}\n";
         }
 
         public void DisplayMenu()
         {
             base.DisplayInfo();
+            Console.WriteLine();
             Console.WriteLine($"{ToString()}");
         }
-
-        public IEnumerable<Menu> GetAll()
-        {
-            throw new NotImplementedException();
-        }
+      
     }
 }
