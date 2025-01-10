@@ -29,7 +29,7 @@ namespace RestaurantApp.Classes
             T existingItem = null;
             foreach (var item in items)
             {
-                if (item.MenuId == obj.MenuId)
+                if (item.UniversalMenuId == obj.UniversalMenuId)
                 {
                     existingItem = item;
                     break;

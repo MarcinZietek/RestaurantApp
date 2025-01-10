@@ -7,17 +7,16 @@ using System.Threading.Tasks;
 namespace RestaurantApp.Abstracts
 {
     public abstract class MenuBase
-    {
+    {       
+        public Guid UniversalMenuId { get; private set; }
         
-        public Guid MenuId { get; private set; }
-
         public MenuBase() {
-            MenuId = Guid.NewGuid();
+            UniversalMenuId = Guid.NewGuid();           
         }
 
         public virtual void DisplayInfo()
         {
-            Console.WriteLine($"MenuId: {MenuId}");
+            Console.WriteLine($"MenuId: {UniversalMenuId}");
         }
     }
 }

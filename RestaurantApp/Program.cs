@@ -330,6 +330,8 @@ namespace RestaurantApp
                 {
                     // Obsługa wyjątków, gdy nie wprowadzono wskazanego numeru w menu
                     Console.WriteLine($"Błąd rzutowania stringu na integer: {fe.Message}");
+
+
                 }
             }
             //Wyświetlanie opcji 
