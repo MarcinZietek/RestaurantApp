@@ -21,6 +21,12 @@ namespace RestaurantApp.Classes
             {
                 throw new ArgumentNullException(nameof(obj), "Menu nie może być puste");
             }
+            obj.RefreshIds();
+            if (items.Exists(m => m.MenuId == obj.MenuId))
+            {
+                Console.WriteLine($"Menu o Id {obj.MenuId} już istnieje. Dodawanie anulowane.");
+                return;
+            }
             items.Add(obj);
             Console.WriteLine($"{typeof(T).Name} dodano pomyślnie.");
         }
@@ -89,5 +95,6 @@ namespace RestaurantApp.Classes
             }            
            
         }
+
     }
 }

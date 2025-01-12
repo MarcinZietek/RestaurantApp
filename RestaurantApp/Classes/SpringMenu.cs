@@ -12,9 +12,9 @@ namespace RestaurantApp.Classes
         {
         private double cost;
         public SpringMenu() { }
-        public SpringMenu(string starter, string soup, string main) : base(starter, soup, main)
+        public SpringMenu(string menuName, string starter, string soup, string main) : base(menuName, starter, soup, main)
         {
-
+          
         }
         public SpringMenu(string menuName, string starter, string soup, string main, string pastry, string non_alcoholic_beverage) : base(menuName, starter, soup, main, pastry, non_alcoholic_beverage)
         {
@@ -25,7 +25,7 @@ namespace RestaurantApp.Classes
 
         public SpringMenu HappyMeal(string Starter, string Soup, string Main)
         {
-            SpringMenu menu = new SpringMenu(Starter, Soup, Main);
+            SpringMenu menu = new SpringMenu(MenuName, Starter, Soup, Main);
             if (string.IsNullOrEmpty(Starter) || string.IsNullOrEmpty(Soup) || string.IsNullOrEmpty(Main))
             {
                 throw new ArgumentNullException("Nie można utworzyć zestawu, brak któregoś ze dań.");
@@ -53,11 +53,11 @@ namespace RestaurantApp.Classes
         {
             if (Starter != null && Soup != null && Main != null && Pastry != null && Non_alcoholic_beverage != null)
             {
-                return $"Duży zestaw wiosenny: \nStarter: {Starter}\nZupa: {Soup}\nDanie główne: {Main}\nDeser: {Pastry}\nNapój: {Non_alcoholic_beverage}\n";
+                return $"Duży zestaw wiosenny: \nId: {MenuId}, Nazwa Menu: {MenuName}, Starter: {Starter}, Zupa: {Soup}, Danie główne: {Main}, Deser: {Pastry}, Napój: {Non_alcoholic_beverage}\n";
             }
             else if (Starter != null && Soup != null && Main != null && Pastry == null && Non_alcoholic_beverage == null)
             {
-                return $"HappyMeal wiosenny: \nStarter: {Starter}\nZupa: {Soup}\ndanie główne: {Main}\n";
+                return $"HappyMeal wiosenny: \nId: {MenuId}, Nazwa Menu: {MenuName}, Starter: {Starter}, Zupa: {Soup}, Danie główne: {Main}\n";
             }
             else return $"Menu w trakcie komponowania";
 

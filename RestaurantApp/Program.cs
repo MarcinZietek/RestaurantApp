@@ -105,7 +105,7 @@ namespace RestaurantApp
                                 {
                                     case 1:
                                         Console.WriteLine("Wyświetlanie menu...");
-                                        menuRepo.DisplayAllMenus(); //grandeMeal.DisplayMenu(); grandeMeal1.DisplayMenu(); happyMeal.DisplayMenu(); happyMeal1.DisplayMenu(); autumnMenuRepo.DisplayAllMenus(); springMenuRepo.DisplayAllMenus(); 
+                                        menuRepo.DisplayAllMenus(); autumnMenuRepo.DisplayAllMenus(); springMenuRepo.DisplayAllMenus(); //grandeMeal.DisplayMenu(); grandeMeal1.DisplayMenu(); happyMeal.DisplayMenu(); happyMeal1.DisplayMenu();  
                                         break;
                                     case 2:
                                         Console.WriteLine("Dodawanie menu...");
@@ -124,26 +124,25 @@ namespace RestaurantApp
                                             Console.WriteLine("\t3 - Dodaj Menu Letnie");
                                             Console.WriteLine("\t4 - Dodaj Menu Jesienne");
                                             Console.WriteLine("\t5 - Dodaj Menu Zimowe");
+                                            Console.WriteLine("\t9 - Wczytaj dane testowe");
                                             Console.WriteLine("\t0 - Powrót do menu głównego");
                                             Console.ForegroundColor = ConsoleColor.Blue;
                                             Console.Write("\nWybierz opcję: ");
                                             Console.ResetColor();
                                             Console.Write("Wybierz cyfrę");
                                             Console.ForegroundColor = ConsoleColor.Magenta;
-                                            Console.WriteLine($" 1 {toNumberEmoji} {fromNumberEmoji} 4");
+                                            Console.WriteLine($" 1 {toNumberEmoji} {fromNumberEmoji} 5");
                                             Console.ResetColor();
 
                                             int addMenuChoice = int.Parse(Console.ReadLine());
                                             switch (addMenuChoice)
                                             {
-                                                case 1: Console.WriteLine("Dodaj Menu Karty");
-                                                    //menuRepo.Add(menu1); menuRepo.Add(menu2);
+                                                case 1: Console.WriteLine("Dodaj Menu Karty");                                                   
                                                     Menu newMenu = GeneralHelper.CreateMenuFromInput();
                                                     menuRepo.Add(newMenu);
                                                     Console.WriteLine("Nowe menu zostało dodane.");
                                                     break;
-                                                case 2: Console.WriteLine("Dodaj Menu Wiosenne");
-                                                    //springMenuRepo.Add(springMenu);
+                                                case 2: Console.WriteLine("Dodaj Menu Wiosenne");                                                    
                                                     Menu newSpringMenu = GeneralHelper.CreateSpringMenuFromInput();
                                                     menuRepo.Add(newSpringMenu);
                                                     Console.WriteLine("Nowe wiosenne menu zostało dodane.");
@@ -151,14 +150,16 @@ namespace RestaurantApp
                                                 case 3: Console.WriteLine("Dodaj Menu Letnie");
                                                     Console.WriteLine("Tworzenie menu letniego...");
                                                     break;
-                                                case 4: Console.WriteLine("Dodaj Menu Jesienne");
-                                                    //autumnMenuRepo.Add(autumnMenu);
+                                                case 4: Console.WriteLine("Dodaj Menu Jesienne");                                                   
                                                     Menu newAutumnMenu = GeneralHelper.CreateAutumnMenuFromInput();
                                                     menuRepo.Add(newAutumnMenu);
                                                     Console.WriteLine("Nowe jesienne menu zostało dodane.");
                                                     break;
                                                 case 5: Console.WriteLine("Dodaj Menu Zimowe");
                                                     Console.WriteLine("Tworzenie menu zimowego...");
+                                                    break;
+                                                case 9: Console.WriteLine("Wczytaj dane testowe");
+                                                    menuRepo.Add(menu1); menuRepo.Add(menu2); springMenuRepo.Add(springMenu); autumnMenuRepo.Add(autumnMenu);
                                                     break;
                                                 case 0:
                                                     inAddMenu = false;

@@ -2,6 +2,7 @@
 using RestaurantApp.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.Metrics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,11 +20,10 @@ namespace RestaurantApp.Classes
         private string main;
         private string pastry;
 
-        public Menu() { }
+        public Menu() :base() { }
 
-        public Menu(string starter, string soup, string main)
-        {
-            
+        public Menu(string menuName, string starter, string soup, string main) : base(menuName)
+        {         
             Starter = starter;
             Soup = soup;
             Main = main;
@@ -39,7 +39,7 @@ namespace RestaurantApp.Classes
         }
 
         public Menu(string non_alcoholic_beverage, string alcoholic_beverage, string starter, string soup, string salad, string main, string pastry)
-        { 
+        {
             Non_alcoholic_beverage = non_alcoholic_beverage;
             Alcoholic_beverage = alcoholic_beverage;
             Starter = starter;
@@ -61,7 +61,7 @@ namespace RestaurantApp.Classes
 
         public override string ToString()
         {
-            return $"Id: {MenuId}, Przystawka: {Starter}, Zupa: {Soup}, Danie główne: {Main}, Deser: {Pastry}, " +
+            return $"Id: {MenuId}, Nazwa Menu: {MenuName}, Przystawka: {Starter}, Zupa: {Soup}, Danie główne: {Main}, Deser: {Pastry}, " +
                    $"Napój bezalkoholowy: {Non_alcoholic_beverage}, Napój alkoholowy: {Alcoholic_beverage}\n";
         }
 

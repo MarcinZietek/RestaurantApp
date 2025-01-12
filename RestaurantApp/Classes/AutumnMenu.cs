@@ -16,9 +16,9 @@ namespace RestaurantApp.Classes
         private double cost;
 
         public AutumnMenu() { }
-        public AutumnMenu(string starter, string soup, string main) : base(starter, soup, main)
+        public AutumnMenu(string menuName, string starter, string soup, string main) : base(menuName, starter, soup, main)
         {
-           
+         
         }
         public AutumnMenu(string menuName, string starter, string soup, string main, string pastry, string non_alcoholic_beverage) : base(menuName, starter, soup, main, pastry, non_alcoholic_beverage)
         {
@@ -30,7 +30,7 @@ namespace RestaurantApp.Classes
 
         public AutumnMenu HappyMeal(string Starter, string Soup, string Main)
         {
-            AutumnMenu menu = new AutumnMenu(Starter, Soup, Main);
+            AutumnMenu menu = new AutumnMenu(MenuName, Starter, Soup, Main);
             if (string.IsNullOrEmpty(Starter) || string.IsNullOrEmpty(Soup) || string.IsNullOrEmpty(Main))
             {
                 throw new ArgumentNullException("Nie można utworzyć zestawu, brak któregoś ze dań.");
@@ -54,11 +54,11 @@ namespace RestaurantApp.Classes
         {
             if (Starter != null && Soup != null && Main != null && Pastry != null && Non_alcoholic_beverage != null)
             {
-                return $"Duży zestaw jesienny: \nStarter: {Starter}, Zupa: {Soup}, Danie główne: {Main}, Deser: {Pastry}, Napój: {Non_alcoholic_beverage}\n";
+                return $"Duży zestaw jesienny: \nId: {MenuId}, Nazwa Menu: {MenuName}, Starter: {Starter}, Zupa: {Soup}, Danie główne: {Main}, Deser: {Pastry}, Napój: {Non_alcoholic_beverage}\n";
             }
             else if (Starter != null && Soup != null && Main != null && Pastry == null && Non_alcoholic_beverage == null)
             {
-                return $"HappyMeal jesienny: \nStarter: {Starter}, Zupa: {Soup}, Danie główne: {Main}\n";
+                return $"HappyMeal jesienny: \nId: {MenuId}, Nazwa Menu: {MenuName}, Starter: {Starter}, Zupa: {Soup}, Danie główne: {Main}\n";
             }
             else return $"Menu w trakcie komponowania";
         }

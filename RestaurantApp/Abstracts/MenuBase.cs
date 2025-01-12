@@ -10,26 +10,29 @@ namespace RestaurantApp.Abstracts
     public abstract class MenuBase
     {       
         public Guid UniversalMenuId { get; private set; }
-        private static int idCounter = 1;
+        protected static int idCounter = 1;
         public string menuName;
-
-        public MenuBase() {
-            UniversalMenuId = Guid.NewGuid();
-            MenuId = idCounter++;
-        }
-
-        public MenuBase(string menuName)
-        {
-            MenuName = menuName;
-        }
 
         public int MenuId { get; private set; }
 
+        public MenuBase() { RefreshIds(); }
+   
+        public MenuBase(string menuName)
+        {          
+            MenuName = menuName;
+        }
+
         public string MenuName { get; set; }    
+
+        public void RefreshIds()
+        {
+            MenuId = idCounter++;
+            UniversalMenuId = Guid.NewGuid();
+        }
 
         public virtual void DisplayInfo()
         {
-            Console.WriteLine($"MenuId: {MenuId} - Rodzaj Menu: {menuName}\n");
+            Console.WriteLine($"MenuId: {MenuId} - Rodzaj Menu: {MenuName}\n");
         }
 
         public virtual void DisplayGuid()
