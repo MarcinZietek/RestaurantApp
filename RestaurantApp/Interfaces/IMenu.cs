@@ -9,5 +9,6 @@ namespace RestaurantApp.Interfaces
     public interface IMenu
     {
         void DisplayMenu();
+        void DisplayIdMenu();
     }
 }

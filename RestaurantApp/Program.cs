@@ -40,12 +40,12 @@ namespace RestaurantApp
            
 
             var menuRepo = new GenericCrudRepository<Menu>();
-            var menu1 = new Menu("Sałatka", "Pomidorowa", "Stek", "Sernik", "Herbata");
-            var menu2 = new Menu("Grzanki z serem", "Minestrone", "Carbonara", "Tiramisu", "Wino Czerwone");
+            var menu1 = new Menu("Zwykłe","Sałatka", "Pomidorowa", "Stek", "Sernik", "Herbata");
+            var menu2 = new Menu("Zwykłe", "Grzanki z serem", "Minestrone", "Carbonara", "Tiramisu", "Wino Czerwone");
             var springMenuRepo = new GenericCrudRepository<SpringMenu>();
             var autumnMenuRepo = new GenericCrudRepository<AutumnMenu>();
-            var springMenu = new SpringMenu("Sałatka owocowa", "Zupa marchewkowa", "Łosoś", "Sernik", "Lemoniada");
-            var autumnMenu = new AutumnMenu("Chleb z masłem", "Rosół", "Schabowy", "Szarlotka", "Kompot");
+            var springMenu = new SpringMenu("Wiosenne", "Sałatka owocowa", "Zupa marchewkowa", "Łosoś", "Sernik", "Lemoniada");
+            var autumnMenu = new AutumnMenu("Jesienne", "Chleb z masłem", "Rosół", "Schabowy", "Szarlotka", "Kompot");
 
 
             bool quit = false;
@@ -74,8 +74,9 @@ namespace RestaurantApp
                     Options();
                     int choice = int.Parse(Console.ReadLine());
                     string message = null;
+                    var menus = new List<Menu>();
                     switch (choice)
-                    {
+                    {                      
                         case 1: 
                             bool inSubMenu = true;
                             while (inSubMenu)
@@ -177,8 +178,27 @@ namespace RestaurantApp
                                         break;
                                     case 3:
                                         Console.WriteLine("Modyfikowanie menu...");
-                                        menu1.Starter = "Bruschetta"; menuRepo.Update(menu1); springMenu.Soup = "Krem z dyni"; springMenuRepo.Update(springMenu); 
-                                        menuRepo.Update(menu1);
+                                        Console.WriteLine("Dostępne Menu - wybierz do modyfikacji.");
+                                        menuRepo.DispalyAllId();
+                                        string menuIdToEdit = GeneralHelper.GetUserInput("Podaj Id Menu do modyfikacji: ");
+                                        Menu menuToUpdate = menuRepo.GetAll().FirstOrDefault(m => m.MenuId.ToString() == menuIdToEdit);
+
+                                        if (menuToUpdate != null)
+                                        {
+                                            menuToUpdate.MenuName = GeneralHelper.GetUserInput("Nazwa Menu: ");
+                                            menuToUpdate.Starter = GeneralHelper.GetUserInput("Nowa przystawka: ");
+                                            menuToUpdate.Soup = GeneralHelper.GetUserInput("Nowa zupa: ");
+                                            menuToUpdate.Main = GeneralHelper.GetUserInput("Nowe danie główne: ");
+                                            menuToUpdate.Pastry = GeneralHelper.GetUserInput("Nowy deser: ");
+                                            menuToUpdate.Non_alcoholic_beverage = GeneralHelper.GetUserInput("Nowy napój bezalkoholowy: ");
+                                            menuRepo.Update(menuToUpdate);
+                                            Console.WriteLine("Menu zostało zaktualizowane.");
+                                        }
+                                        else
+                                        {
+                                            Console.WriteLine("Menu o podanym ID nie znaleziono.");
+                                        }
+                                                                               
                                         break;
                                     case 4:
                                         Console.WriteLine("Usuwanie menu...");

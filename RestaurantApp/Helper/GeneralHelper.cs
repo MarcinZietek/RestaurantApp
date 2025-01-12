@@ -27,33 +27,36 @@ namespace RestaurantApp.Helper
 
         public static Menu CreateMenuFromInput()
         {
+            string menuName = GetUserInput("Nazwa Menu: ");
             string starter = GetUserInput("Podaj przystawkę: ");
             string soup = GetUserInput("Podaj zupę: ");
             string main = GetUserInput("Podaj danie główne: ");
             string pastry = GetUserInput("Podaj deser: ");
             string nonAlcoholicBeverage = GetUserInput("Podaj napój bezalkoholowy: ");
 
-            return new Menu(starter, soup, main, pastry, nonAlcoholicBeverage);
+            return new Menu(menuName, starter, soup, main, pastry, nonAlcoholicBeverage);
         }
 
         public static SpringMenu CreateSpringMenuFromInput()
         {
+            string menuName = GetUserInput("Nazwa Menu: ");
             string starter = GetUserInput("Podaj przystawkę: ");
             string soup = GetUserInput("Podaj zupę: ");
             string main = GetUserInput("Podaj danie główne: ");
             string pastry = GetUserInput("Podaj deser: ");
             string nonAlcoholicBeverage = GetUserInput("Podaj napój bezalkoholowy: ");
-            return new SpringMenu(starter, soup, main, pastry, nonAlcoholicBeverage);
+            return new SpringMenu(menuName, starter, soup, main, pastry, nonAlcoholicBeverage);
         }
 
         public static AutumnMenu CreateAutumnMenuFromInput()
         {
+            string menuName = GetUserInput("Nazwa Menu: ");
             string starter = GetUserInput("Podaj przystawkę: ");
             string soup = GetUserInput("Podaj zupę: ");
             string main = GetUserInput("Podaj danie główne: ");
             string pastry = GetUserInput("Podaj deser: ");
             string nonAlcoholicBeverage = GetUserInput("Podaj napój bezalkoholowy: ");
-            return new AutumnMenu(starter, soup, main, pastry, nonAlcoholicBeverage);
+            return new AutumnMenu(menuName, starter, soup, main, pastry, nonAlcoholicBeverage);
         }
 
 

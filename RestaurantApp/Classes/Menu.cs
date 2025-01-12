@@ -10,7 +10,7 @@ namespace RestaurantApp.Classes
 {
     public class Menu : MenuBase, IMenu
     {
-        private static int idCounter = 1;
+        
         private string non_alcoholic_beverage;
         private string alcoholic_beverage;
         private string starter;
@@ -23,15 +23,14 @@ namespace RestaurantApp.Classes
 
         public Menu(string starter, string soup, string main)
         {
-            MenuId = idCounter++;
+            
             Starter = starter;
             Soup = soup;
             Main = main;
         }
 
-        public Menu(string starter, string soup, string main, string pastry, string non_alcoholic_beverage) 
+        public Menu(string menuName, string starter, string soup, string main, string pastry, string non_alcoholic_beverage) : base(menuName)
         {
-            MenuId = idCounter++;
             Starter = starter;
             Soup = soup;
             Main = main;
@@ -40,8 +39,7 @@ namespace RestaurantApp.Classes
         }
 
         public Menu(string non_alcoholic_beverage, string alcoholic_beverage, string starter, string soup, string salad, string main, string pastry)
-        {
-            MenuId = idCounter++;
+        { 
             Non_alcoholic_beverage = non_alcoholic_beverage;
             Alcoholic_beverage = alcoholic_beverage;
             Starter = starter;
@@ -52,7 +50,7 @@ namespace RestaurantApp.Classes
             
         }
 
-        public int MenuId { get; private set; }
+       
         public string Non_alcoholic_beverage { get { return non_alcoholic_beverage; } set { non_alcoholic_beverage = value; } }
         public string Alcoholic_beverage { get { return alcoholic_beverage; } set { alcoholic_beverage = value; } }
         public string Starter { get { return starter; } set { starter = value; } }
@@ -69,9 +67,12 @@ namespace RestaurantApp.Classes
 
         public void DisplayMenu()
         {
-            base.DisplayInfo();
-            Console.WriteLine();
             Console.WriteLine($"{ToString()}");
+        }
+
+        public void DisplayIdMenu()
+        {
+            base.DisplayInfo();
         }
       
     }

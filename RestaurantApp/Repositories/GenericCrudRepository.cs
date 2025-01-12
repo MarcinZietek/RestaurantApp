@@ -1,4 +1,5 @@
-﻿using RestaurantApp.Interfaces;
+﻿using RestaurantApp.Abstracts;
+using RestaurantApp.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,7 +30,7 @@ namespace RestaurantApp.Classes
             T existingItem = null;
             foreach (var item in items)
             {
-                if (item.UniversalMenuId == obj.UniversalMenuId)
+                if (item.MenuId == obj.MenuId)
                 {
                     existingItem = item;
                     break;
@@ -71,6 +72,22 @@ namespace RestaurantApp.Classes
             {
                 item.DisplayMenu();
             }
+        }
+
+        public void DispalyAllId()
+        {         
+            if (items.Count == 0)
+            {
+                Console.WriteLine("Brak Menu do wyświetlenia.");
+            }
+            else
+            {
+                foreach (var item in items)
+                {
+                    item.DisplayIdMenu();
+                }
+            }            
+           
         }
     }
 }

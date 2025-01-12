@@ -13,5 +13,6 @@ namespace RestaurantApp.Interfaces
         void Update(T obj);
         void Delete(T obj);
         IEnumerable<T> GetAll();
+        
     }
 }

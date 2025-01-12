@@ -16,7 +16,7 @@ namespace RestaurantApp.Classes
         {
 
         }
-        public SpringMenu(string starter, string soup, string main, string pastry, string non_alcoholic_beverage) : base(starter, soup, main, pastry, non_alcoholic_beverage)
+        public SpringMenu(string menuName, string starter, string soup, string main, string pastry, string non_alcoholic_beverage) : base(menuName, starter, soup, main, pastry, non_alcoholic_beverage)
         {
           
         }
@@ -38,7 +38,7 @@ namespace RestaurantApp.Classes
 
         public SpringMenu GrandeMenu(string Starter, string Soup, string Main, string Pastry, string Non_alcoholic_beverage)
         {
-            SpringMenu menu = new SpringMenu(Starter, Soup, Main, Pastry, Non_alcoholic_beverage);
+            SpringMenu menu = new SpringMenu( MenuName, Starter, Soup, Main, Pastry, Non_alcoholic_beverage);
             if (string.IsNullOrEmpty(Starter) || string.IsNullOrEmpty(Soup) || string.IsNullOrEmpty(Main) || string.IsNullOrEmpty(Pastry) || string.IsNullOrEmpty(Non_alcoholic_beverage))
             {
                 throw new ArgumentNullException("Nie można utworzyć zestawu, brak któregoś ze dań.");
