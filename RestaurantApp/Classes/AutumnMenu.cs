@@ -12,7 +12,7 @@ namespace RestaurantApp.Classes
 {
     public class AutumnMenu : Menu, IMenu
     {
-       
+            
         private double cost;
 
         public AutumnMenu() { }
@@ -68,6 +68,5 @@ namespace RestaurantApp.Classes
             Console.WriteLine($"{ToString()}");
         }
 
-      
     }
 }

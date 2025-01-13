@@ -36,17 +36,13 @@ namespace RestaurantApp
             grandeMeal1 = grandeMeal1.GrandeMenu("Sałatka z nowalijek", "Krem z młodych ziemniaków i chrzanu", "Młoda perliczka", "Sernik cytrynowy", "Mus z jarmużu");
             happyMeal = happyMeal.HappyMeal("Chrupiące bataty", "Krem z pora", "Placek po zbójnicku");
             happyMeal1 = happyMeal1.HappyMeal("Seler naciowy z sosem serowym", "Pikantny krem z pomidorów", "Skrzydełka buffalo");
+         
+            var menuRepo = new GenericMenuRepository<Menu>();
 
-           
-
-            var menuRepo = new GenericCrudRepository<Menu>();
             var menu1 = new Menu("Zwykłe","Sałatka", "Pomidorowa", "Stek", "Sernik", "Herbata");
             var menu2 = new Menu("Zwykłe", "Grzanki z serem", "Minestrone", "Carbonara", "Tiramisu", "Wino Czerwone");
-            var springMenuRepo = new GenericCrudRepository<SpringMenu>();
-            var autumnMenuRepo = new GenericCrudRepository<AutumnMenu>();
-            var springMenu = new SpringMenu("Wiosenne", "Sałatka owocowa", "Zupa marchewkowa", "Łosoś", "Sernik", "Lemoniada");
-            var autumnMenu = new AutumnMenu("Jesienne", "Chleb z masłem", "Rosół", "Schabowy", "Szarlotka", "Kompot");
-
+            var menu3 = new Menu("Wiosenne", "Sałatka owocowa", "Zupa marchewkowa", "Łosoś", "Sernik", "Lemoniada");
+            var menu4 = new Menu("Jesienne", "Chleb z masłem", "Rosół", "Schabowy", "Szarlotka", "Kompot");
 
             bool quit = false;
             
@@ -74,7 +70,6 @@ namespace RestaurantApp
                     Options();
                     int choice = int.Parse(Console.ReadLine());
                     string message = null;
-                    var menus = new List<Menu>();
                     switch (choice)
                     {                      
                         case 1: 
@@ -105,7 +100,76 @@ namespace RestaurantApp
                                 {
                                     case 1:
                                         Console.WriteLine("Wyświetlanie menu...");
-                                        menuRepo.DisplayAllMenus(); autumnMenuRepo.DisplayAllMenus(); springMenuRepo.DisplayAllMenus(); //grandeMeal.DisplayMenu(); grandeMeal1.DisplayMenu(); happyMeal.DisplayMenu(); happyMeal1.DisplayMenu();  
+                                     //   menuRepo.DisplayAllMenus(); autumnMenuRepo.DisplayAllMenus(); springMenuRepo.DisplayAllMenus(); //grandeMeal.DisplayMenu(); grandeMeal1.DisplayMenu(); happyMeal.DisplayMenu(); happyMeal1.DisplayMenu();  
+                                        bool inListMenu = true;
+                                        while (inListMenu)
+                                        {
+                                            Console.Clear();
+                                            Console.ForegroundColor = ConsoleColor.DarkBlue;
+                                            Console.WriteLine("----------------------------------------------------------------------------------------------------------------------");
+                                            Console.WriteLine("|                                               List Menu                                                          |");
+                                            Console.WriteLine("----------------------------------------------------------------------------------------------------------------------");
+                                            Console.ResetColor();
+                                            Console.WriteLine("\t1 - Wyświetl wszystkie Menu");
+                                            Console.WriteLine("\t2 - Wyświetl Menu Kart");
+                                            Console.WriteLine("\t3 - Wyświetl Menu Wiosenne");
+                                            Console.WriteLine("\t4 - Wyświetl Menu Letnie");
+                                            Console.WriteLine("\t5 - Wyświetl Menu Jesienne");
+                                            Console.WriteLine("\t6 - Wyświetl Menu Zimowe");
+                                            Console.WriteLine("\t0 - Powrót do menu głównego");
+                                            Console.ForegroundColor = ConsoleColor.Blue;
+                                            Console.Write("\nWybierz opcję: ");
+                                            Console.ResetColor();
+                                            Console.Write("Wybierz cyfrę");
+                                            Console.ForegroundColor = ConsoleColor.Magenta;
+                                            Console.WriteLine($" 1 {toNumberEmoji} {fromNumberEmoji} 5");
+                                            Console.ResetColor();
+
+                                            int listMenuChoice = int.Parse(Console.ReadLine());
+                                            switch (listMenuChoice)
+                                            {
+                                                case 1:
+                                                    Console.WriteLine("Wyświetl wszystkie Menu");
+                                                    menuRepo.DisplayAllMenus();
+                                                    break;
+                                                case 2:
+                                                    Console.WriteLine("Menu z Karty:");
+                                                    var menus = menuRepo.FindMenusByName("Zwykłe");
+                                                    menuRepo.DisplayAllMenus(menus);
+                                                    break;
+                                                case 3:
+                                                    Console.WriteLine("Wiosenne Menu:");
+                                                    var springMenus = menuRepo.FindMenusByName("Wiosenne");
+                                                    menuRepo.DisplayAllMenus(springMenus);
+                                                    break;
+                                                case 4:
+                                                    Console.WriteLine("Wyświetl Menu Letnie");
+                                                   
+                                                    break;
+                                                case 5:
+                                                    Console.WriteLine("\nJesienne Menu:");
+                                                    var autumnMenus = menuRepo.FindMenusByName("Jesienne");
+                                                    menuRepo.DisplayAllMenus(autumnMenus);
+                                                    break;
+                                                case 6:
+                                                    Console.WriteLine("Wyświetl Menu Zimowe");
+
+                                                    break;
+                                                case 0:
+                                                    inListMenu = false;
+                                                    Console.WriteLine("Powrót do menu głównego...");
+                                                    break;
+                                                default:
+                                                    Console.WriteLine("Niepoprawny wybór.");
+                                                    break;
+                                            }
+
+                                            if (inListMenu)
+                                            {
+                                                Console.WriteLine("\nWciśnij dowolny klawisz, aby kontynuować...");
+                                                Console.ReadKey();
+                                            }
+                                        }
                                         break;
                                     case 2:
                                         Console.WriteLine("Dodawanie menu...");
@@ -159,7 +223,7 @@ namespace RestaurantApp
                                                     Console.WriteLine("Tworzenie menu zimowego...");
                                                     break;
                                                 case 9: Console.WriteLine("Wczytaj dane testowe");
-                                                    menuRepo.Add(menu1); menuRepo.Add(menu2); springMenuRepo.Add(springMenu); autumnMenuRepo.Add(autumnMenu);
+                                                    menuRepo.Add(menu1); menuRepo.Add(menu2); menuRepo.Add(menu3); menuRepo.Add(menu4);// menuRepo.Add(springMenu); menuRepo.Add(autumnMenu);
                                                     break;
                                                 case 0:
                                                     inAddMenu = false;
@@ -180,7 +244,7 @@ namespace RestaurantApp
                                     case 3:
                                         Console.WriteLine("Modyfikowanie menu...");
                                         Console.WriteLine("Dostępne Menu - wybierz do modyfikacji.");
-                                        menuRepo.DispalyAllId();
+                                        menuRepo.DisplayAllId();
                                         string menuIdToEdit = GeneralHelper.GetUserInput("Podaj Id Menu do modyfikacji: ");
                                         Menu menuToUpdate = menuRepo.GetAll().FirstOrDefault(m => m.MenuId.ToString() == menuIdToEdit);
 
@@ -203,7 +267,7 @@ namespace RestaurantApp
                                         break;
                                     case 4:
                                         Console.WriteLine("Usuwanie menu...");
-                                        menuRepo.Delete(menu2); autumnMenuRepo.Delete(autumnMenu);
+                                        menuRepo.Delete(menu2);// autumnMenuRepo.Delete(autumnMenu);
                                         break;
                                     case 0:
                                         inSubMenu = false;

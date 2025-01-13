@@ -10,6 +10,7 @@ namespace RestaurantApp.Classes
 {
         public class SpringMenu : Menu, IMenu
         {
+        private readonly List<SpringMenu> springMenus = new List<SpringMenu>();
         private double cost;
         public SpringMenu() { }
         public SpringMenu(string menuName, string starter, string soup, string main) : base(menuName, starter, soup, main)
@@ -67,7 +68,6 @@ namespace RestaurantApp.Classes
             base.DisplayInfo();
             Console.WriteLine($"{ToString()}");
         }
-
     }
 }
 

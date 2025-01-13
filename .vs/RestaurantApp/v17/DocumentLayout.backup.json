@@ -3,28 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\Developer\\source\\repos\\RestaurantApp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{AE35D89A-D3D2-4519-944B-D63BEF456BF2}|RestaurantApp\\RestaurantApp.csproj|c:\\users\\developer\\source\\repos\\restaurantapp\\restaurantapp\\repositories\\genericcrudrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AE35D89A-D3D2-4519-944B-D63BEF456BF2}|RestaurantApp\\RestaurantApp.csproj|solutionrelative:restaurantapp\\repositories\\genericcrudrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{AE35D89A-D3D2-4519-944B-D63BEF456BF2}|RestaurantApp\\RestaurantApp.csproj|c:\\users\\developer\\source\\repos\\restaurantapp\\restaurantapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AE35D89A-D3D2-4519-944B-D63BEF456BF2}|RestaurantApp\\RestaurantApp.csproj|solutionrelative:restaurantapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AE35D89A-D3D2-4519-944B-D63BEF456BF2}|RestaurantApp\\RestaurantApp.csproj|c:\\users\\developer\\source\\repos\\restaurantapp\\restaurantapp\\abstracts\\menubase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AE35D89A-D3D2-4519-944B-D63BEF456BF2}|RestaurantApp\\RestaurantApp.csproj|solutionrelative:restaurantapp\\abstracts\\menubase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AE35D89A-D3D2-4519-944B-D63BEF456BF2}|RestaurantApp\\RestaurantApp.csproj|c:\\users\\developer\\source\\repos\\restaurantapp\\restaurantapp\\repositories\\genericmenurepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AE35D89A-D3D2-4519-944B-D63BEF456BF2}|RestaurantApp\\RestaurantApp.csproj|solutionrelative:restaurantapp\\repositories\\genericmenurepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{AE35D89A-D3D2-4519-944B-D63BEF456BF2}|RestaurantApp\\RestaurantApp.csproj|c:\\users\\developer\\source\\repos\\restaurantapp\\restaurantapp\\classes\\menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AE35D89A-D3D2-4519-944B-D63BEF456BF2}|RestaurantApp\\RestaurantApp.csproj|solutionrelative:restaurantapp\\classes\\menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AE35D89A-D3D2-4519-944B-D63BEF456BF2}|RestaurantApp\\RestaurantApp.csproj|c:\\users\\developer\\source\\repos\\restaurantapp\\restaurantapp\\classes\\springmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AE35D89A-D3D2-4519-944B-D63BEF456BF2}|RestaurantApp\\RestaurantApp.csproj|solutionrelative:restaurantapp\\classes\\springmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AE35D89A-D3D2-4519-944B-D63BEF456BF2}|RestaurantApp\\RestaurantApp.csproj|c:\\users\\developer\\source\\repos\\restaurantapp\\restaurantapp\\classes\\autumnmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AE35D89A-D3D2-4519-944B-D63BEF456BF2}|RestaurantApp\\RestaurantApp.csproj|solutionrelative:restaurantapp\\classes\\autumnmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AE35D89A-D3D2-4519-944B-D63BEF456BF2}|RestaurantApp\\RestaurantApp.csproj|c:\\users\\developer\\source\\repos\\restaurantapp\\restaurantapp\\abstracts\\menubase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AE35D89A-D3D2-4519-944B-D63BEF456BF2}|RestaurantApp\\RestaurantApp.csproj|solutionrelative:restaurantapp\\abstracts\\menubase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{AE35D89A-D3D2-4519-944B-D63BEF456BF2}|RestaurantApp\\RestaurantApp.csproj|c:\\users\\developer\\source\\repos\\restaurantapp\\restaurantapp\\interfaces\\imenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -35,8 +27,24 @@
       "RelativeMoniker": "D:0:0:{AE35D89A-D3D2-4519-944B-D63BEF456BF2}|RestaurantApp\\RestaurantApp.csproj|solutionrelative:restaurantapp\\helper\\generalhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{AE35D89A-D3D2-4519-944B-D63BEF456BF2}|RestaurantApp\\RestaurantApp.csproj|c:\\users\\developer\\source\\repos\\restaurantapp\\restaurantapp\\classes\\springmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AE35D89A-D3D2-4519-944B-D63BEF456BF2}|RestaurantApp\\RestaurantApp.csproj|solutionrelative:restaurantapp\\classes\\springmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AE35D89A-D3D2-4519-944B-D63BEF456BF2}|RestaurantApp\\RestaurantApp.csproj|c:\\users\\developer\\source\\repos\\restaurantapp\\restaurantapp\\classes\\autumnmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AE35D89A-D3D2-4519-944B-D63BEF456BF2}|RestaurantApp\\RestaurantApp.csproj|solutionrelative:restaurantapp\\classes\\autumnmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{AE35D89A-D3D2-4519-944B-D63BEF456BF2}|RestaurantApp\\RestaurantApp.csproj|c:\\users\\developer\\source\\repos\\restaurantapp\\restaurantapp\\interfaces\\icrudrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AE35D89A-D3D2-4519-944B-D63BEF456BF2}|RestaurantApp\\RestaurantApp.csproj|solutionrelative:restaurantapp\\interfaces\\icrudrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AE35D89A-D3D2-4519-944B-D63BEF456BF2}|RestaurantApp\\RestaurantApp.csproj|c:\\users\\developer\\source\\repos\\restaurantapp\\restaurantapp\\interfaces\\itaskmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AE35D89A-D3D2-4519-944B-D63BEF456BF2}|RestaurantApp\\RestaurantApp.csproj|solutionrelative:restaurantapp\\interfaces\\itaskmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AE35D89A-D3D2-4519-944B-D63BEF456BF2}|RestaurantApp\\RestaurantApp.csproj|c:\\users\\developer\\source\\repos\\restaurantapp\\restaurantapp\\interfaces\\iemplyeeactions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AE35D89A-D3D2-4519-944B-D63BEF456BF2}|RestaurantApp\\RestaurantApp.csproj|solutionrelative:restaurantapp\\interfaces\\iemplyeeactions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -46,27 +54,105 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 10,
+          "SelectedChildIndex": 3,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
+              "Title": "MenuBase.cs",
+              "DocumentMoniker": "C:\\Users\\Developer\\source\\repos\\RestaurantApp\\RestaurantApp\\Abstracts\\MenuBase.cs",
+              "RelativeDocumentMoniker": "RestaurantApp\\Abstracts\\MenuBase.cs",
+              "ToolTip": "C:\\Users\\Developer\\source\\repos\\RestaurantApp\\RestaurantApp\\Abstracts\\MenuBase.cs",
+              "RelativeToolTip": "RestaurantApp\\Abstracts\\MenuBase.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAA5wAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-13T19:27:11.394Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Developer\\source\\repos\\RestaurantApp\\RestaurantApp\\Program.cs",
+              "RelativeDocumentMoniker": "RestaurantApp\\Program.cs",
+              "ToolTip": "C:\\Users\\Developer\\source\\repos\\RestaurantApp\\RestaurantApp\\Program.cs",
+              "RelativeToolTip": "RestaurantApp\\Program.cs",
+              "ViewState": "AgIAAF0AAAAAAAAAAAAuwHUAAABCAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-13T17:29:21.153Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "SpringMenu.cs",
               "DocumentMoniker": "C:\\Users\\Developer\\source\\repos\\RestaurantApp\\RestaurantApp\\Classes\\SpringMenu.cs",
               "RelativeDocumentMoniker": "RestaurantApp\\Classes\\SpringMenu.cs",
               "ToolTip": "C:\\Users\\Developer\\source\\repos\\RestaurantApp\\RestaurantApp\\Classes\\SpringMenu.cs",
               "RelativeToolTip": "RestaurantApp\\Classes\\SpringMenu.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAQwEUAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-12T11:31:06.924Z",
+              "WhenOpened": "2025-01-13T17:21:14.547Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "GenericMenuRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Developer\\source\\repos\\RestaurantApp\\RestaurantApp\\Repositories\\GenericMenuRepository.cs",
+              "RelativeDocumentMoniker": "RestaurantApp\\Repositories\\GenericMenuRepository.cs",
+              "ToolTip": "C:\\Users\\Developer\\source\\repos\\RestaurantApp\\RestaurantApp\\Repositories\\GenericMenuRepository.cs",
+              "RelativeToolTip": "RestaurantApp\\Repositories\\GenericMenuRepository.cs",
+              "ViewState": "AgIAAFEAAAAAAAAAAAAmwHMAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-13T17:00:04.434Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "AutumnMenu.cs",
+              "DocumentMoniker": "C:\\Users\\Developer\\source\\repos\\RestaurantApp\\RestaurantApp\\Classes\\AutumnMenu.cs",
+              "RelativeDocumentMoniker": "RestaurantApp\\Classes\\AutumnMenu.cs",
+              "ToolTip": "C:\\Users\\Developer\\source\\repos\\RestaurantApp\\RestaurantApp\\Classes\\AutumnMenu.cs",
+              "RelativeToolTip": "RestaurantApp\\Classes\\AutumnMenu.cs",
+              "ViewState": "AgIAADUAAAAAAAAAAAAuwAwAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-13T16:57:48.753Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Menu.cs",
+              "DocumentMoniker": "C:\\Users\\Developer\\source\\repos\\RestaurantApp\\RestaurantApp\\Classes\\Menu.cs",
+              "RelativeDocumentMoniker": "RestaurantApp\\Classes\\Menu.cs",
+              "ToolTip": "C:\\Users\\Developer\\source\\repos\\RestaurantApp\\RestaurantApp\\Classes\\Menu.cs",
+              "RelativeToolTip": "RestaurantApp\\Classes\\Menu.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAowAsAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-13T16:57:21.751Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "IEmplyeeActions.cs",
+              "DocumentMoniker": "C:\\Users\\Developer\\source\\repos\\RestaurantApp\\RestaurantApp\\Interfaces\\IEmplyeeActions.cs",
+              "RelativeDocumentMoniker": "RestaurantApp\\Interfaces\\IEmplyeeActions.cs",
+              "ToolTip": "C:\\Users\\Developer\\source\\repos\\RestaurantApp\\RestaurantApp\\Interfaces\\IEmplyeeActions.cs",
+              "RelativeToolTip": "RestaurantApp\\Interfaces\\IEmplyeeActions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-13T16:51:00.898Z",
               "EditorCaption": ""
             },
             {
@@ -77,99 +163,48 @@
               "RelativeDocumentMoniker": "RestaurantApp\\Interfaces\\ICrudRepository.cs",
               "ToolTip": "C:\\Users\\Developer\\source\\repos\\RestaurantApp\\RestaurantApp\\Interfaces\\ICrudRepository.cs",
               "RelativeToolTip": "RestaurantApp\\Interfaces\\ICrudRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-12T10:42:59.081Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "AutumnMenu.cs",
-              "DocumentMoniker": "C:\\Users\\Developer\\source\\repos\\RestaurantApp\\RestaurantApp\\Classes\\AutumnMenu.cs",
-              "RelativeDocumentMoniker": "RestaurantApp\\Classes\\AutumnMenu.cs",
-              "ToolTip": "C:\\Users\\Developer\\source\\repos\\RestaurantApp\\RestaurantApp\\Classes\\AutumnMenu.cs",
-              "RelativeToolTip": "RestaurantApp\\Classes\\AutumnMenu.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAuAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-10T17:21:13.642Z",
+              "WhenOpened": "2025-01-13T16:45:58.904Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Menu.cs",
-              "DocumentMoniker": "C:\\Users\\Developer\\source\\repos\\RestaurantApp\\RestaurantApp\\Classes\\Menu.cs",
-              "RelativeDocumentMoniker": "RestaurantApp\\Classes\\Menu.cs",
-              "ToolTip": "C:\\Users\\Developer\\source\\repos\\RestaurantApp\\RestaurantApp\\Classes\\Menu.cs",
-              "RelativeToolTip": "RestaurantApp\\Classes\\Menu.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-10T17:21:04.267Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "MenuBase.cs",
-              "DocumentMoniker": "C:\\Users\\Developer\\source\\repos\\RestaurantApp\\RestaurantApp\\Abstracts\\MenuBase.cs",
-              "RelativeDocumentMoniker": "RestaurantApp\\Abstracts\\MenuBase.cs",
-              "ToolTip": "C:\\Users\\Developer\\source\\repos\\RestaurantApp\\RestaurantApp\\Abstracts\\MenuBase.cs",
-              "RelativeToolTip": "RestaurantApp\\Abstracts\\MenuBase.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-10T17:20:56.491Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 4,
               "Title": "IMenu.cs",
               "DocumentMoniker": "C:\\Users\\Developer\\source\\repos\\RestaurantApp\\RestaurantApp\\Interfaces\\IMenu.cs",
               "RelativeDocumentMoniker": "RestaurantApp\\Interfaces\\IMenu.cs",
               "ToolTip": "C:\\Users\\Developer\\source\\repos\\RestaurantApp\\RestaurantApp\\Interfaces\\IMenu.cs",
               "RelativeToolTip": "RestaurantApp\\Interfaces\\IMenu.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAANAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-10T17:20:32.652Z",
+              "WhenOpened": "2025-01-13T16:45:48.348Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 5,
               "Title": "GeneralHelper.cs",
               "DocumentMoniker": "C:\\Users\\Developer\\source\\repos\\RestaurantApp\\RestaurantApp\\Helper\\GeneralHelper.cs",
               "RelativeDocumentMoniker": "RestaurantApp\\Helper\\GeneralHelper.cs",
               "ToolTip": "C:\\Users\\Developer\\source\\repos\\RestaurantApp\\RestaurantApp\\Helper\\GeneralHelper.cs",
               "RelativeToolTip": "RestaurantApp\\Helper\\GeneralHelper.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAAowC8AAAAhAAAAAAAAAA==",
+              "ViewState": "AgIAABIAAAAAAAAAAAAowAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-10T17:20:12.749Z",
+              "WhenOpened": "2025-01-13T16:39:32.784Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Developer\\source\\repos\\RestaurantApp\\RestaurantApp\\Program.cs",
-              "RelativeDocumentMoniker": "RestaurantApp\\Program.cs",
-              "ToolTip": "C:\\Users\\Developer\\source\\repos\\RestaurantApp\\RestaurantApp\\Program.cs",
-              "RelativeToolTip": "RestaurantApp\\Program.cs",
-              "ViewState": "AgIAAIUAAAAAAAAAAAAgwKEAAAA0AAAAAAAAAA==",
+              "DocumentIndex": 9,
+              "Title": "ITaskManager.cs",
+              "DocumentMoniker": "C:\\Users\\Developer\\source\\repos\\RestaurantApp\\RestaurantApp\\Interfaces\\ITaskManager.cs",
+              "RelativeDocumentMoniker": "RestaurantApp\\Interfaces\\ITaskManager.cs",
+              "ToolTip": "C:\\Users\\Developer\\source\\repos\\RestaurantApp\\RestaurantApp\\Interfaces\\ITaskManager.cs",
+              "RelativeToolTip": "RestaurantApp\\Interfaces\\ITaskManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-09T16:18:11.657Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "GenericCrudRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Developer\\source\\repos\\RestaurantApp\\RestaurantApp\\Repositories\\GenericCrudRepository.cs",
-              "RelativeDocumentMoniker": "RestaurantApp\\Repositories\\GenericCrudRepository.cs",
-              "ToolTip": "C:\\Users\\Developer\\source\\repos\\RestaurantApp\\RestaurantApp\\Repositories\\GenericCrudRepository.cs",
-              "RelativeToolTip": "RestaurantApp\\Repositories\\GenericCrudRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-09T16:04:28.616Z",
+              "WhenOpened": "2025-01-13T16:39:24.039Z",
               "EditorCaption": ""
             }
           ]

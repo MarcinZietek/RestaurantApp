@@ -6,11 +6,11 @@ using System.Linq;
 
 namespace RestaurantApp.Classes
 {
-    public class GenericCrudRepository<T> : ICrudRepository<T> where T : Menu
+    public class GenericMenuRepository<T> : ICrudRepository<T> where T : MenuBase
     {
         private readonly List<T> items;
 
-        public GenericCrudRepository()
+        public GenericMenuRepository()
         {
             items = new List<T>();
         }
@@ -66,21 +66,14 @@ namespace RestaurantApp.Classes
                 Console.WriteLine($"{typeof(T).Name} nie znaleziono.");
             }
         }
-
+       
         public IEnumerable<T> GetAll()
         {
             return items;
         }
-
-        public void DisplayAllMenus()
-        {
-            foreach (var item in items)
-            {
-                item.DisplayMenu();
-            }
-        }
-
-        public void DispalyAllId()
+        
+        [Obsolete]
+        public void DisplayAllId()
         {         
             if (items.Count == 0)
             {
@@ -90,11 +83,36 @@ namespace RestaurantApp.Classes
             {
                 foreach (var item in items)
                 {
-                    item.DisplayIdMenu();
+                    //item.DisplayIdMenu();
                 }
             }            
            
         }
 
+        public IEnumerable<T> FindMenusByName(string menuName)
+        {
+            if (string.IsNullOrEmpty(menuName))
+            {
+                throw new ArgumentException("Nazwa menu nie może być pusta.", nameof(menuName));
+            }
+            IEnumerable<T> listMenusByName = from item in items where item.MenuName == menuName select item;
+            return listMenusByName; 
+        }
+
+        public void DisplayAllMenus(IEnumerable<T> menus)
+        {
+            foreach (var menu in menus)
+            {
+                menu.DisplayInfo();
+            }
+        }
+
+        public void DisplayAllMenus()
+        {
+            foreach (var item in items)
+            {
+                item.DisplayInfo();
+            }
+        }
     }
 }

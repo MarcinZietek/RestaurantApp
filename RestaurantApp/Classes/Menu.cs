@@ -11,7 +11,7 @@ namespace RestaurantApp.Classes
 {
     public class Menu : MenuBase, IMenu
     {
-        
+    
         private string non_alcoholic_beverage;
         private string alcoholic_beverage;
         private string starter;
@@ -74,6 +74,6 @@ namespace RestaurantApp.Classes
         {
             base.DisplayInfo();
         }
-      
+
     }
 }

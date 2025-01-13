@@ -10,5 +10,8 @@ namespace RestaurantApp.Interfaces
     {
         void DisplayMenu();
         void DisplayIdMenu();
+
+
+
     }
 }
