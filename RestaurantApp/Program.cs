@@ -26,24 +26,8 @@ namespace RestaurantApp
             string emojiFromNumber = char.ConvertFromUtf32(fromNumber);
             string emojiToNumber = char.ConvertFromUtf32(toNumber);
             fromNumberEmoji.Append(emojiFromNumber);
-            toNumberEmoji.Append(emojiToNumber);
-
-            AutumnMenu grandeMeal = new AutumnMenu();
-            AutumnMenu happyMeal = new AutumnMenu();
-            SpringMenu grandeMeal1 = new SpringMenu();
-            SpringMenu happyMeal1 = new SpringMenu();
-            grandeMeal = grandeMeal.GrandeMenu("Grzanki z pasta z suszonych pomidorów oraz serem", "Krem z dyni", "Gęsina Św. Marcina", "Tiramisu truflowe", "Kompot jerzynowy");
-            grandeMeal1 = grandeMeal1.GrandeMenu("Sałatka z nowalijek", "Krem z młodych ziemniaków i chrzanu", "Młoda perliczka", "Sernik cytrynowy", "Mus z jarmużu");
-            happyMeal = happyMeal.HappyMeal("Chrupiące bataty", "Krem z pora", "Placek po zbójnicku");
-            happyMeal1 = happyMeal1.HappyMeal("Seler naciowy z sosem serowym", "Pikantny krem z pomidorów", "Skrzydełka buffalo");
-         
+            toNumberEmoji.Append(emojiToNumber);        
             var menuRepo = new GenericMenuRepository<Menu>();
-
-            var menu1 = new Menu("Zwykłe","Sałatka", "Pomidorowa", "Stek", "Sernik", "Herbata");
-            var menu2 = new Menu("Zwykłe", "Grzanki z serem", "Minestrone", "Carbonara", "Tiramisu", "Wino Czerwone");
-            var menu3 = new Menu("Wiosenne", "Sałatka owocowa", "Zupa marchewkowa", "Łosoś", "Sernik", "Lemoniada");
-            var menu4 = new Menu("Jesienne", "Chleb z masłem", "Rosół", "Schabowy", "Szarlotka", "Kompot");
-
             bool quit = false;
             
             //Wyświetlanie menu z możliwością ciągłego wyboru opcji. Użytkownik sam decyduje o zakończeniu programu
@@ -144,16 +128,18 @@ namespace RestaurantApp
                                                     break;
                                                 case 4:
                                                     Console.WriteLine("Wyświetl Menu Letnie");
-                                                   
+                                                    var summerMenus = menuRepo.FindMenusByName("Letnie");
+                                                    menuRepo.DisplayAllMenus(summerMenus);
                                                     break;
                                                 case 5:
-                                                    Console.WriteLine("\nJesienne Menu:");
+                                                    Console.WriteLine("Jesienne Menu:");
                                                     var autumnMenus = menuRepo.FindMenusByName("Jesienne");
                                                     menuRepo.DisplayAllMenus(autumnMenus);
                                                     break;
                                                 case 6:
                                                     Console.WriteLine("Wyświetl Menu Zimowe");
-
+                                                    var winterMenu = menuRepo.FindMenusByName("Zimowe");
+                                                    menuRepo.DisplayAllMenus(winterMenu);
                                                     break;
                                                 case 0:
                                                     inListMenu = false;
