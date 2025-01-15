@@ -1,5 +1,6 @@
 ﻿using RestaurantApp.Abstracts;
 using RestaurantApp.Interfaces;
+using RestaurantApp.TestData;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,12 +8,28 @@ using System.Linq;
 namespace RestaurantApp.Classes
 {
     public class GenericMenuRepository<T> : ICrudRepository<T> where T : MenuBase
-    {
+    {      
         private readonly List<T> items;
 
         public GenericMenuRepository()
         {
             items = new List<T>();
+        }
+
+        public void LoadTestData()
+        {
+            var testData = Data.GetMenus().Where(menu => menu is T).Select(menu => menu as T).Cast<T>();
+            foreach (var menu in testData)            
+            {
+                try
+                {
+                    Add(menu);
+                }
+                catch (InvalidCastException e)
+                {
+                   Console.WriteLine($"Błąd rzutowania obiektu { e.Message}");
+                }               
+            }
         }
 
         public void Add(T obj)
@@ -109,9 +126,9 @@ namespace RestaurantApp.Classes
 
         public void DisplayAllMenus()
         {
-            foreach (var item in items)
+            foreach (var menu in items)
             {
-                item.DisplayInfo();
+                menu.DisplayInfo();
             }
         }
     }

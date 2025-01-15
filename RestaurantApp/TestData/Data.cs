@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace RestaurantApp.TestData
 {
-    internal class TestData
+    public static class Data
     {
 
         public static List<Menu> GetMenus()

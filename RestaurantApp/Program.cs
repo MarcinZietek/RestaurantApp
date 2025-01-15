@@ -3,6 +3,7 @@ using RestaurantApp.Abstracts;
 using RestaurantApp.Classes;
 using RestaurantApp.Enums;
 using RestaurantApp.Helper;
+using RestaurantApp.TestData;
 using System;
 using System.Reflection;
 using System.Security.Cryptography.X509Certificates;
@@ -29,7 +30,6 @@ namespace RestaurantApp
             toNumberEmoji.Append(emojiToNumber);        
             var menuRepo = new GenericMenuRepository<Menu>();
             bool quit = false;
-            
             //Wyświetlanie menu z możliwością ciągłego wyboru opcji. Użytkownik sam decyduje o zakończeniu programu
             Options();
 
@@ -84,7 +84,6 @@ namespace RestaurantApp
                                 {
                                     case 1:
                                         Console.WriteLine("Wyświetlanie menu...");
-                                     //   menuRepo.DisplayAllMenus(); autumnMenuRepo.DisplayAllMenus(); springMenuRepo.DisplayAllMenus(); //grandeMeal.DisplayMenu(); grandeMeal1.DisplayMenu(); happyMeal.DisplayMenu(); happyMeal1.DisplayMenu();  
                                         bool inListMenu = true;
                                         while (inListMenu)
                                         {
@@ -114,32 +113,67 @@ namespace RestaurantApp
                                             {
                                                 case 1:
                                                     Console.WriteLine("Wyświetl wszystkie Menu");
-                                                    menuRepo.DisplayAllMenus();
+                                                    menuRepo.DisplayAllMenus();                                                    
                                                     break;
                                                 case 2:
                                                     Console.WriteLine("Menu z Karty:");
-                                                    var menus = menuRepo.FindMenusByName("Zwykłe");
-                                                    menuRepo.DisplayAllMenus(menus);
+                                                    var regularMenus = menuRepo.FindMenusByName("Zwykłe");
+                                                    if (!regularMenus.Any())
+                                                    {
+                                                        Console.WriteLine("Nie znaleziono menu o podanej nazwie.");
+                                                    }
+                                                    else
+                                                    {
+                                                        menuRepo.DisplayAllMenus(regularMenus);
+                                                    }
                                                     break;
                                                 case 3:
                                                     Console.WriteLine("Wiosenne Menu:");
                                                     var springMenus = menuRepo.FindMenusByName("Wiosenne");
-                                                    menuRepo.DisplayAllMenus(springMenus);
+                                                    if (!springMenus.Any())
+                                                    {
+                                                        Console.WriteLine("Nie znaleziono menu Wiosennego w bazie.");
+                                                    }
+                                                    else
+                                                    {
+                                                        menuRepo.DisplayAllMenus(springMenus);
+                                                    }
                                                     break;
                                                 case 4:
                                                     Console.WriteLine("Wyświetl Menu Letnie");
                                                     var summerMenus = menuRepo.FindMenusByName("Letnie");
-                                                    menuRepo.DisplayAllMenus(summerMenus);
+                                                    if (!summerMenus.Any())
+                                                    {
+                                                        Console.WriteLine("Nie znaleziono menu Letniego w bazie.");
+                                                    }
+                                                    else
+                                                    {
+                                                        menuRepo.DisplayAllMenus(summerMenus);
+                                                    }
                                                     break;
                                                 case 5:
                                                     Console.WriteLine("Jesienne Menu:");
-                                                    var autumnMenus = menuRepo.FindMenusByName("Jesienne");
-                                                    menuRepo.DisplayAllMenus(autumnMenus);
+                                                    var autumnMenus = menuRepo.FindMenusByName("Jesienne");                                                   
+                                                    if (!autumnMenus.Any())
+                                                    {
+                                                        Console.WriteLine("Nie znaleziono menu Jesiennego w bazie.");
+                                                    }
+                                                    else
+                                                    {
+                                                        menuRepo.DisplayAllMenus(autumnMenus);
+                                                    }
                                                     break;
                                                 case 6:
                                                     Console.WriteLine("Wyświetl Menu Zimowe");
-                                                    var winterMenu = menuRepo.FindMenusByName("Zimowe");
-                                                    menuRepo.DisplayAllMenus(winterMenu);
+                                                    var winterMenus = menuRepo.FindMenusByName("Zimowe");
+                                                    if (!winterMenus.Any())
+                                                    {
+                                                        Console.WriteLine("Nie znaleziono menu zimowego.");
+                                                    }
+                                                    else
+                                                    {
+                                                        menuRepo.DisplayAllMenus(winterMenus);
+                                                    }
                                                     break;
                                                 case 0:
                                                     inListMenu = false;
@@ -209,7 +243,7 @@ namespace RestaurantApp
                                                     Console.WriteLine("Tworzenie menu zimowego...");
                                                     break;
                                                 case 9: Console.WriteLine("Wczytaj dane testowe");
-                                                    menuRepo.Add(menu1); menuRepo.Add(menu2); menuRepo.Add(menu3); menuRepo.Add(menu4);// menuRepo.Add(springMenu); menuRepo.Add(autumnMenu);
+                                                    menuRepo.LoadTestData();
                                                     break;
                                                 case 0:
                                                     inAddMenu = false;
@@ -253,7 +287,7 @@ namespace RestaurantApp
                                         break;
                                     case 4:
                                         Console.WriteLine("Usuwanie menu...");
-                                        menuRepo.Delete(menu2);// autumnMenuRepo.Delete(autumnMenu);
+                                        //menuRepo.Delete(menu2);// autumnMenuRepo.Delete(autumnMenu);
                                         break;
                                     case 0:
                                         inSubMenu = false;
